@@ -1,0 +1,8 @@
+{
+   "name": "PlanezSphere",
+   "requires": [],
+   "id": "889adfdf-c942-4464-9d3a-e1f721307f6e",
+   "resources": [
+      "_styles/mainStyle.css"
+   ]
+}

@@ -1,0 +1,189 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoginController",
+        "views": [
+            "ForgotPassword"
+        ]
+    },
+    "designerId": "b5637fd6-23dc-46ef-8f49-73dcb8df731a",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnlogin",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onLoginButtonClicked",
+                "implHandler": [
+                    "var username = Ext.ComponentQuery.query(\"#txtusername\")[0].value;",
+                    "var password = Ext.ComponentQuery.query(\"#txtpassword\")[0].value;",
+                    "console.log('username=' + username + \",password=\" + password);",
+                    "if ( username == undefined || username.length == 0){",
+                    "    Ext.Msg.alert('Error','Please enter a username');",
+                    "    return;",
+                    "}",
+                    "if ( password == undefined || password.length == 0){",
+                    "    Ext.Msg.alert('Error','Please enter a Password');",
+                    "    return;",
+                    "}",
+                    "Ext.Ajax.request({",
+                    "    method:'POST',",
+                    "    url:'_data/read_Login.php',",
+                    "    params:{",
+                    "        'username':username,",
+                    "        'password':password",
+                    "    },",
+                    "    success:function(response){",
+                    "        try{",
+                    "            console.dir(response);",
+                    "            var result = response.responseText;",
+                    "            var responseArray = response.responseText.split(\",\");",
+                    "            var message = responseArray[1];",
+                    "            console.dir(message);",
+                    "            var codeArray = message.split(\":\");",
+                    "            console.dir(codeArray);",
+                    "            var code = codeArray[1].replace('\"','');",
+                    "            code = code.replace('}','');",
+                    "            console.dir(code);",
+                    "            switch(code)",
+                    "            {",
+                    "                case \"0\":",
+                    "                    //document.location='_includes/debug.php';",
+                    "                    break;",
+                    "                case \"1\":",
+                    "                    Ext.Msg.alert('Alert','Internal Error 501, NO Username Found');",
+                    "                    break;",
+                    "                case \"2\":",
+                    "                    Ext.Msg.alert('Alert','Internal Error 502, No Password found');",
+                    "                    break;",
+                    "                case \"3\":",
+                    "                    Ext.Msg.alert('Alert','Internal Error 503, User not found');",
+                    "                    break;",
+                    "                case \"4\":",
+                    "                    Ext.Msg.alert('Alert','Internal Error 504, Bad Username');",
+                    "                    break;",
+                    "                case \"5\":",
+                    "                    Ext.Msg.alert('Alert','Internal Error 505, Bad Password');",
+                    "                    break;",
+                    "                case \"10\":",
+                    "                    //forgot password=1 but security code is fine",
+                    "                    Ext.Msg.alert('Alert','Internal Error 505, Bad Password');",
+                    "                    break;",
+                    "                case \"01\":",
+                    "                    //security question needs set but forgot is ok",
+                    "                    Ext.Msg.alert('Alert','Internal Error 505, Bad Password');",
+                    "                    break;",
+                    "                case \"11\":",
+                    "                    //security question needs set and forgot password needs set",
+                    "                    Ext.Msg.alert('Alert','Internal Error 505, Bad Password');",
+                    "                    break;",
+                    "                default:",
+                    "                    Ext.Msg.alert('Alert','Internal Error 506, Internal Default Error');",
+                    "                    break;",
+                    "            }",
+                    "        } catch (e){",
+                    "            Ext.Msg.alert('Error','The Server returned an unknown error:507');",
+                    "        }",
+                    "",
+                    "    }",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "701746c0-84a3-4320-a83f-06615e0a417e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtpassword",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onLoginfieldSpecialkey",
+                "implHandler": [
+                    "if ( e.getKey() == e.ENTER){",
+                    "    //lets try to log in",
+                    "    var loginbutton = Ext.ComponentQuery.query('#btnlogin')[0];",
+                    "    loginbutton.fireEvent('click',loginbutton);",
+                    "}"
+                ],
+                "name": "specialkey",
+                "scope": "me"
+            },
+            "designerId": "5531d32d-190a-47ea-aca0-a593773377a9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCancelChangePassword",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onCancelChangePassword_clicked",
+                "implHandler": [
+                    "var cp = Ext.getCmp('wdwChangePassword');",
+                    "cp.close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "1811165a-5435-4024-b4cf-58a72dd69040"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnSubmitChangePassword",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onSubmitChangePassword_clicked",
+                "implHandler": [
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "9d9301a7-6012-4804-99e0-ecb92edaf4f5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtConfirmPassword",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onChangePasswordSpecialKeyUp",
+                "implHandler": [
+                    "var button = Ext.ComponentQuery.query('#btnSubmitChangePassword')[0];",
+                    "button.fireEvent('click',button);"
+                ],
+                "name": "specialkey",
+                "scope": "me"
+            },
+            "designerId": "ad23e0aa-3aba-4cfa-86af-84138cca00d5"
+        }
+    ]
+}

@@ -16,6 +16,10 @@
 Ext.define('PlanezSphere.controller.LoginController', {
     extend: 'Ext.app.Controller',
 
+    views: [
+        'ForgotPassword'
+    ],
+
     onLoginButtonClicked: function(button, e, eOpts) {
         var username = Ext.ComponentQuery.query("#txtusername")[0].value;
         var password = Ext.ComponentQuery.query("#txtpassword")[0].value;
@@ -109,7 +113,8 @@ Ext.define('PlanezSphere.controller.LoginController', {
     },
 
     onChangePasswordSpecialKeyUp: function(field, e, eOpts) {
-
+        var button = Ext.ComponentQuery.query('#btnSubmitChangePassword')[0];
+        button.fireEvent('click',button);
     },
 
     init: function(application) {

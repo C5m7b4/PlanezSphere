@@ -142,20 +142,21 @@
         "openTabs": [
             "b5637fd6-23dc-46ef-8f49-73dcb8df731a",
             "0b3f28b9-6332-412f-8445-2843ecacda1c",
-            "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79"
+            "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79",
+            "application"
         ]
     },
     "canvasState": {
-        "topInstance": "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79"
+        "topInstance": "0b3f28b9-6332-412f-8445-2843ecacda1c"
     },
     "inspectorState": {
-        "topInstance": "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79",
-        "selectedInstance": "6d5a99bf-3ec6-4c15-b943-0df1398ffd44"
+        "topInstance": "application",
+        "selectedInstance": "application"
     },
     "codeState": {
-        "topInstance": "b5637fd6-23dc-46ef-8f49-73dcb8df731a"
+        "topInstance": "application"
     },
-    "editMode": "design",
+    "editMode": "code",
     "userSettings": {
         "no-cmd": false
     }

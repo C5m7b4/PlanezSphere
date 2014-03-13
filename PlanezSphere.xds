@@ -1,0 +1,52 @@
+{
+    "name": "PlanezSphere",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "4.0.2.67",
+            "frameworkVersion": "4.2.1.883"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/~mikebedingfield/PlanezSphere/",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "3.0.3",
+    "xdsBuild": 1382,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "0b3f28b9-6332-412f-8445-2843ecacda1c",
+            "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79"
+        ],
+        "store": [],
+        "controller": [
+            "b5637fd6-23dc-46ef-8f49-73dcb8df731a"
+        ],
+        "model": [],
+        "resource": [
+            "87e923c8-5356-478e-bfe1-425cc518e882",
+            "cf6fcbf9-6552-4fe7-9f48-bd82de5dd2d5",
+            "14474d06-669e-4b5d-852c-1be5a4a6c497",
+            "8618e488-28ea-479b-ac41-6b816defe8b3"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

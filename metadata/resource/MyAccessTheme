@@ -1,0 +1,21 @@
+{
+    "type": "accessthemeresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyAccessTheme"
+    },
+    "designerId": "14474d06-669e-4b5d-852c-1be5a4a6c497",
+    "storage": {
+        "needsCompile": false,
+        "simple": {
+            "pkgVersion": 1,
+            "pkgPath": "packages"
+        },
+        "nameIndex": 1,
+        "varData": {}
+    }
+}

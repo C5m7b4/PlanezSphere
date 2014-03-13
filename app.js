@@ -25,9 +25,7 @@ Ext.application({
         'Ext.window.MessageBox'
     ],
     views: [
-        null,
-        'MyViewport1',
-        'ForgotPassword'
+        'MainViewport'
     ],
     controllers: [
         'LoginController'
@@ -35,7 +33,7 @@ Ext.application({
     name: 'PlanezSphere',
 
     launch: function() {
-        Ext.create('PlanezSphere.view.MyViewport1');
+        Ext.create('PlanezSphere.view.MainViewport');
     }
 
 });

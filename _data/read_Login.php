@@ -17,13 +17,11 @@
 			{
 				$userPasses = false;
 				$foundUsername = false;
-				logIt('found username1='.$foundUsername);
 				while($row = odbc_fetch_array($userResults))
 				{
 					$foundUsername = true;
 					if ( $hashedPassword == $row['password'])
 					{						
-						logIt('found username2='.$foundUsername);
 						//we have our user,  now we need to store some information into their session
 						$_SESSION['userid'] = $row['id'];
 						$_SESSION['username'] = $row['username'];
@@ -61,7 +59,6 @@
 						
 					}
 				}
-				logIt('found username3='.$foundUsername);
 				if ( $foundUsername == true)
 				{
 					//bad password

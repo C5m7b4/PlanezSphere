@@ -11,10 +11,13 @@
         ],
         "name": "PlanezSphere",
         "requires": [
-            "Ext.window.MessageBox"
+            "Ext.window.MessageBox",
+            "PlanezSphere.parse.c5Parse",
+            "Ext.layout.container.Border"
         ],
         "views": [
-            "MainViewport"
+            "MainViewport",
+            "SecurityQuestion"
         ]
     },
     "designerId": "application"

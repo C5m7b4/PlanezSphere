@@ -32,7 +32,8 @@
     "viewOrderMap": {
         "view": [
             "0b3f28b9-6332-412f-8445-2843ecacda1c",
-            "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79"
+            "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79",
+            "51bc3ba8-575a-446c-993d-7b5d27bc2b24"
         ],
         "store": [],
         "controller": [
@@ -43,7 +44,8 @@
             "87e923c8-5356-478e-bfe1-425cc518e882",
             "cf6fcbf9-6552-4fe7-9f48-bd82de5dd2d5",
             "14474d06-669e-4b5d-852c-1be5a4a6c497",
-            "8618e488-28ea-479b-ac41-6b816defe8b3"
+            "8618e488-28ea-479b-ac41-6b816defe8b3",
+            "71dfcd12-7c0d-409d-a3c4-4b129de74066"
         ],
         "app": [
             "application"

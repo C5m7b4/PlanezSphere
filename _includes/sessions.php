@@ -1,11 +1,6 @@
 <?php 
 	require_once("logs.php");
 	session_start();
-	function redirect_to($location)
-	{
-		header("Location:".$location);
-		exit();
-	}
 	
 	function logged_in()
 	{

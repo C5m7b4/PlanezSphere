@@ -23,7 +23,7 @@ Ext.define('PlanezSphere.controller.LoginController', {
     onLoginButtonClicked: function(button, e, eOpts) {
         var username = Ext.ComponentQuery.query("#txtusername")[0].value;
         var password = Ext.ComponentQuery.query("#txtpassword")[0].value;
-        console.log('username=' + username + ",password=" + password);
+
         if ( username == undefined || username.length == 0){
             Ext.Msg.alert('Error','Please enter a username');
             return;
@@ -41,23 +41,19 @@ Ext.define('PlanezSphere.controller.LoginController', {
             },
             success:function(response){
                 try{
-                    console.dir(response);
                     var result = response.responseText;
                     var responseArray = response.responseText.split(",");
                     var message = responseArray[1];
-                    console.dir(message);
                     var codeArray = message.split(":");
-                    console.dir(codeArray);
                     var code = codeArray[1].replace('"','');
                     code = code.replace('}','');
-                    console.dir(code);
                     switch(code)
                     {
                         case "0":
                             //document.location='_includes/debug.php';
                             break;
                         case "1":
-                            Ext.Msg.alert('Alert','Internal Error 501, NO Username Found');
+                            Ext.Msg.alert('Alert','Internal Error 501, No Username Found');
                             break;
                         case "2":
                             Ext.Msg.alert('Alert','Internal Error 502, No Password found');
@@ -73,22 +69,25 @@ Ext.define('PlanezSphere.controller.LoginController', {
                             break;
                         case "10":
                             //forgot password=1 but security code is fine
-                            Ext.Msg.alert('Alert','Internal Error 505, Bad Password');
+                            var fp = Ext.create('PlanezSphere.view.ForgotPassword',{
+
+                            });
+                            fp.show();
                             break;
                         case "01":
                             //security question needs set but forgot is ok
-                            Ext.Msg.alert('Alert','Internal Error 505, Bad Password');
+                            Ext.Msg.alert('Alert','Internal Error 507, Bad Password');
                             break;
                         case "11":
                             //security question needs set and forgot password needs set
-                            Ext.Msg.alert('Alert','Internal Error 505, Bad Password');
+                            Ext.Msg.alert('Alert','Internal Error 508, Bad Password');
                             break;
                         default:
-                            Ext.Msg.alert('Alert','Internal Error 506, Internal Default Error');
+                            Ext.Msg.alert('Alert','Internal Error 509, Internal Default Error');
                             break;
                     }
                 } catch (e){
-                    Ext.Msg.alert('Error','The Server returned an unknown error:507');
+                    Ext.Msg.alert('Error','The Server returned an unknown error:510');
                 }
 
             }
@@ -109,7 +108,36 @@ Ext.define('PlanezSphere.controller.LoginController', {
     },
 
     onSubmitChangePassword_clicked: function(button, e, eOpts) {
+        var p1 = Ext.ComponentQuery.query('#changePassword')[0].value;
+        var p2 = Ext.ComponentQuery.query('#confirmPassword')[0].value;
+        console.dir(p1);
 
+        if ( p1 !== p2){
+            Ext.Msg.alert('Error','Your Passwords do not match');
+            return;
+        }
+
+        Ext.Ajax.request({
+            method:'POST',
+            url:'_data/update_Login.php',
+            params:{
+                'password':p1
+            },
+            success:function(response){
+                var parser = Ext.create('PlanezSphere.parse.c5Parse',{
+
+                });
+                if ( parser.parseAjax(response) == true){
+                    var pw = Ext.getCmp('forgotPassword');
+                    pw.close();
+                    doLogin();
+                }
+            }
+        });
+
+        function doLogin(){
+            console.log('you are not logged in');
+        }
     },
 
     onChangePasswordSpecialKeyUp: function(field, e, eOpts) {
@@ -131,7 +159,7 @@ Ext.define('PlanezSphere.controller.LoginController', {
             "#btnSubmitChangePassword": {
                 click: this.onSubmitChangePassword_clicked
             },
-            "#txtConfirmPassword": {
+            "#confirmPassword": {
                 specialkey: this.onChangePasswordSpecialKeyUp
             }
         });

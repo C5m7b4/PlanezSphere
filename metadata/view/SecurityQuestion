@@ -1,0 +1,66 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SecurityQuestion",
+        "height": 168,
+        "id": "securityQuestion",
+        "title": "Assign a Security Question",
+        "width": 468
+    },
+    "designerId": "51bc3ba8-575a-446c-993d-7b5d27bc2b24",
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label"
+            },
+            "designerId": "185a0809-846b-47a5-91bc-4de7110c81d0"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label"
+            },
+            "designerId": "4a7460a3-b63b-419b-b70f-0c25f570eb12"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "MyButton"
+            },
+            "designerId": "8a729f9b-3d7b-43e0-9721-07077799e389"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "MyButton"
+            },
+            "designerId": "7bc33cf4-ba5c-4256-a2c6-758dec5e10fa"
+        }
+    ]
+}

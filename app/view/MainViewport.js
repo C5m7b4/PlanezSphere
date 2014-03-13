@@ -93,7 +93,13 @@ Ext.define('PlanezSphere.view.MainViewport', {
                                             anchor: '100%',
                                             itemId: 'txtusername',
                                             fieldLabel: 'Username',
-                                            labelAlign: 'right'
+                                            labelAlign: 'right',
+                                            listeners: {
+                                                afterrender: {
+                                                    fn: me.onTxtusernameAfterRender,
+                                                    scope: me
+                                                }
+                                            }
                                         },
                                         {
                                             xtype: 'textfield',
@@ -158,6 +164,10 @@ Ext.define('PlanezSphere.view.MainViewport', {
         });
 
         me.callParent(arguments);
+    },
+
+    onTxtusernameAfterRender: function(component, eOpts) {
+        component.focus();
     }
 
 });

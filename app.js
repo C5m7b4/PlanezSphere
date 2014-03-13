@@ -22,10 +22,13 @@ Ext.Loader.setConfig({
 Ext.application({
 
     requires: [
-        'Ext.window.MessageBox'
+        'Ext.window.MessageBox',
+        'PlanezSphere.parse.c5Parse',
+        'Ext.layout.container.Border'
     ],
     views: [
-        'MainViewport'
+        'MainViewport',
+        'SecurityQuestion'
     ],
     controllers: [
         'LoginController'

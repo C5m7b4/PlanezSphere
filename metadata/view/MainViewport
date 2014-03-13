@@ -159,7 +159,26 @@
                                         "labelAlign": "right",
                                         "layout|anchor": "100%"
                                     },
-                                    "designerId": "3539f964-ec91-461c-b56d-623ae3e1c305"
+                                    "designerId": "3539f964-ec91-461c-b56d-623ae3e1c305",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onTxtusernameAfterRender",
+                                                "implHandler": [
+                                                    "component.focus();"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "e58763c3-e169-4197-a4ed-60f2131d7b7e"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",

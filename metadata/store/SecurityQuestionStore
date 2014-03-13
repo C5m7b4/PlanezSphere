@@ -1,0 +1,39 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SecurityQuestionStore",
+        "model": "SecurityQuestionModel",
+        "storeId": "SecurityQuestionStore"
+    },
+    "designerId": "dcfdf288-ba8a-4e43-b718-6d022801506a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "_data/read_Security.php"
+            },
+            "designerId": "222bed9d-ac04-4453-8658-1780309b0ca8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "f81f09c5-aa48-461c-a328-9e44f529d226"
+                }
+            ]
+        }
+    ]
+}

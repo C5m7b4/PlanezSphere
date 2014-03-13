@@ -1,0 +1,38 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SecurityQuestionModel"
+    },
+    "designerId": "39c1316b-279a-4b12-a8dd-9df7c9d5e96c",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "ccaa00b9-a855-4a32-85fa-a465b74e2896"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "question"
+            },
+            "designerId": "1ed1a845-2c57-4e00-8783-77fa256a2bdc"
+        }
+    ]
+}

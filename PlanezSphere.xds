@@ -35,11 +35,15 @@
             "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79",
             "51bc3ba8-575a-446c-993d-7b5d27bc2b24"
         ],
-        "store": [],
+        "store": [
+            "dcfdf288-ba8a-4e43-b718-6d022801506a"
+        ],
         "controller": [
             "b5637fd6-23dc-46ef-8f49-73dcb8df731a"
         ],
-        "model": [],
+        "model": [
+            "39c1316b-279a-4b12-a8dd-9df7c9d5e96c"
+        ],
         "resource": [
             "87e923c8-5356-478e-bfe1-425cc518e882",
             "cf6fcbf9-6552-4fe7-9f48-bd82de5dd2d5",

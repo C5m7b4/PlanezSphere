@@ -17,13 +17,14 @@ Ext.define('PlanezSphere.view.SecurityQuestion', {
     extend: 'Ext.window.Window',
 
     requires: [
+        'Ext.container.Container',
         'Ext.form.field.ComboBox',
         'Ext.button.Button'
     ],
 
-    height: 168,
+    height: 152,
     id: 'securityQuestion',
-    width: 468,
+    width: 545,
     title: 'Assign a Security Question',
 
     initComponent: function() {
@@ -32,20 +33,54 @@ Ext.define('PlanezSphere.view.SecurityQuestion', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'combobox',
-                    fieldLabel: 'Label'
-                },
-                {
-                    xtype: 'textfield',
-                    fieldLabel: 'Label'
-                },
-                {
-                    xtype: 'button',
-                    text: 'MyButton'
-                },
-                {
-                    xtype: 'button',
-                    text: 'MyButton'
+                    xtype: 'container',
+                    padding: 10,
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            itemId: 'comboSecurity',
+                            width: 500,
+                            fieldLabel: 'Select Security Question',
+                            labelAlign: 'right',
+                            labelWidth: 200,
+                            displayField: 'question',
+                            store: 'SecurityQuestionStore',
+                            valueField: 'id'
+                        },
+                        {
+                            xtype: 'textfield',
+                            itemId: 'txtSecurity',
+                            fieldLabel: 'Answer',
+                            labelAlign: 'right',
+                            labelWidth: 200
+                        },
+                        {
+                            xtype: 'container',
+                            margin: 10,
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch',
+                                pack: 'end',
+                                padding: 5
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    itemId: 'btnCancelSecurity',
+                                    margin: '0 5 0 5',
+                                    width: 100,
+                                    text: 'Cancel'
+                                },
+                                {
+                                    xtype: 'button',
+                                    margins: '0 5 0 5 ',
+                                    itemId: 'btnSubmitSecurity',
+                                    width: 100,
+                                    text: 'Submit'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         });

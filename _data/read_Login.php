@@ -35,9 +35,12 @@
 						{
 							if ( $row['securityquestion'] == '0')
 							{
-								$returncode = '11';
+								$returncode = '11';							
 							}
-							$returncode ='10';
+							else
+							{
+								$returncode ='10';
+							}							
 						}
 						else
 						{

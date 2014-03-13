@@ -16,8 +16,15 @@
 Ext.define('PlanezSphere.controller.LoginController', {
     extend: 'Ext.app.Controller',
 
+    models: [
+        'SecurityQuestionModel'
+    ],
+    stores: [
+        'SecurityQuestionStore'
+    ],
     views: [
-        'ForgotPassword'
+        'ForgotPassword',
+        'SecurityQuestion'
     ],
 
     onLoginButtonClicked: function(button, e, eOpts) {
@@ -41,6 +48,7 @@ Ext.define('PlanezSphere.controller.LoginController', {
             },
             success:function(response){
                 try{
+                    console.dir(response);
                     var result = response.responseText;
                     var responseArray = response.responseText.split(",");
                     var message = responseArray[1];
@@ -73,14 +81,26 @@ Ext.define('PlanezSphere.controller.LoginController', {
 
                             });
                             fp.show();
+                            doLogin();
                             break;
                         case "01":
                             //security question needs set but forgot is ok
-                            Ext.Msg.alert('Alert','Internal Error 507, Bad Password');
+                            var sq = Ext.create('PlanezSphere.view.SecurityQuestion',{});
+                            sq.show();
+                            doLogin();
                             break;
                         case "11":
                             //security question needs set and forgot password needs set
-                            Ext.Msg.alert('Alert','Internal Error 508, Bad Password');
+                            var fp = Ext.create('PlanezSphere.view.ForgotPassword',{
+
+                            });
+                            fp.on('close',function(e){
+                                var sq = Ext.create('PlanezSphere.view.SecurityQuestion',{});
+                                sq.show();
+                                doLogin();
+                            });
+                            fp.show();
+
                             break;
                         default:
                             Ext.Msg.alert('Alert','Internal Error 509, Internal Default Error');
@@ -92,6 +112,10 @@ Ext.define('PlanezSphere.controller.LoginController', {
 
             }
         });
+
+        function doLogin(){
+            console.log("you are now logged into our system");
+        }
     },
 
     onLoginfieldSpecialkey: function(field, e, eOpts) {
@@ -130,19 +154,55 @@ Ext.define('PlanezSphere.controller.LoginController', {
                 if ( parser.parseAjax(response) == true){
                     var pw = Ext.getCmp('forgotPassword');
                     pw.close();
-                    doLogin();
                 }
             }
         });
 
-        function doLogin(){
-            console.log('you are not logged in');
-        }
     },
 
     onChangePasswordSpecialKeyUp: function(field, e, eOpts) {
         var button = Ext.ComponentQuery.query('#btnSubmitChangePassword')[0];
         button.fireEvent('click',button);
+    },
+
+    onCancelSecurity_click: function(button, e, eOpts) {
+        var sqw = Ext.getCmp('securityQuestion');
+        sqw.close();
+    },
+
+    onSubmitSecurity_click: function(button, e, eOpts) {
+        var question = Ext.ComponentQuery.query('#comboSecurity')[0].value;
+        console.dir(question);
+
+        var answer = Ext.ComponentQuery.query('#txtSecurity')[0].value;
+        console.dir(answer);
+
+        if ( question === undefined ){
+            Ext.Msg.alert('Error','Please select a question first');
+            return;
+        }
+
+        if ( answer === undefined || answer.length === 0){
+            Ext.Msg.alert('Error','Please answer the question');
+            return;
+        }
+
+        //now that all is well, we can send the answer and question off to the server
+        Ext.Ajax.request({
+            method:'POST',
+            url:'_data/update_Security.php',
+            params:{
+                'question':question,
+                'answer':answer
+            },
+            success:function(response){
+                var parser = Ext.create('PlanezSphere.parse.c5Parse',{});
+                if (parser.parseAjax(response) === true){
+                    var sqw = Ext.getCmp('securityQuestion');
+                    sqw.close();
+                }
+            }
+        });
     },
 
     init: function(application) {
@@ -161,6 +221,12 @@ Ext.define('PlanezSphere.controller.LoginController', {
             },
             "#confirmPassword": {
                 specialkey: this.onChangePasswordSpecialKeyUp
+            },
+            "#btnCancelSecurity": {
+                click: this.onCancelSecurity_click
+            },
+            "#btnSubmitSecurity": {
+                click: this.onSubmitSecurity_click
             }
         });
     }

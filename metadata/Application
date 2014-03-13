@@ -16,8 +16,7 @@
             "Ext.layout.container.Border"
         ],
         "views": [
-            "MainViewport",
-            "SecurityQuestion"
+            "MainViewport"
         ]
     },
     "designerId": "application"

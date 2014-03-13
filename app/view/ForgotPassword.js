@@ -25,7 +25,7 @@ Ext.define('PlanezSphere.view.ForgotPassword', {
 
     frame: true,
     height: 169,
-    id: 'wdwChangePassword',
+    id: 'forgotPassword',
     width: 309,
     title: 'Set Password',
 

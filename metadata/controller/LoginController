@@ -7,8 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "LoginController",
+        "models": [
+            "SecurityQuestionModel"
+        ],
+        "stores": [
+            "SecurityQuestionStore"
+        ],
         "views": [
-            "ForgotPassword"
+            "ForgotPassword",
+            "SecurityQuestion"
         ]
     },
     "designerId": "b5637fd6-23dc-46ef-8f49-73dcb8df731a",
@@ -45,6 +52,7 @@
                     "    },",
                     "    success:function(response){",
                     "        try{",
+                    "            console.dir(response);",
                     "            var result = response.responseText;",
                     "            var responseArray = response.responseText.split(\",\");",
                     "            var message = responseArray[1];",
@@ -74,17 +82,29 @@
                     "                case \"10\":",
                     "                    //forgot password=1 but security code is fine",
                     "                    var fp = Ext.create('PlanezSphere.view.ForgotPassword',{",
-                    "                        ",
+                    "",
                     "                    });",
                     "                    fp.show();",
+                    "                    doLogin();",
                     "                    break;",
                     "                case \"01\":",
                     "                    //security question needs set but forgot is ok",
-                    "                    Ext.Msg.alert('Alert','Internal Error 507, Bad Password');",
+                    "                    var sq = Ext.create('PlanezSphere.view.SecurityQuestion',{});",
+                    "                    sq.show();",
+                    "                    doLogin();",
                     "                    break;",
                     "                case \"11\":",
                     "                    //security question needs set and forgot password needs set",
-                    "                    Ext.Msg.alert('Alert','Internal Error 508, Bad Password');",
+                    "                    var fp = Ext.create('PlanezSphere.view.ForgotPassword',{",
+                    "                        ",
+                    "                    });",
+                    "                    fp.on('close',function(e){",
+                    "                        var sq = Ext.create('PlanezSphere.view.SecurityQuestion',{});",
+                    "                        sq.show();",
+                    "                        doLogin();",
+                    "                    });",
+                    "                    fp.show();",
+                    "                    ",
                     "                    break;",
                     "                default:",
                     "                    Ext.Msg.alert('Alert','Internal Error 509, Internal Default Error');",
@@ -95,7 +115,11 @@
                     "        }",
                     "",
                     "    }",
-                    "});"
+                    "});",
+                    "",
+                    "function doLogin(){",
+                    "    console.log(\"you are now logged into our system\");",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me"
@@ -174,19 +198,15 @@
                     "    },",
                     "    success:function(response){",
                     "        var parser = Ext.create('PlanezSphere.parse.c5Parse',{",
-                    "            ",
+                    "",
                     "        });",
                     "        if ( parser.parseAjax(response) == true){",
                     "            var pw = Ext.getCmp('forgotPassword');",
                     "            pw.close();",
-                    "            doLogin();",
                     "        }",
                     "    }",
                     "});",
-                    "",
-                    "function doLogin(){",
-                    "    console.log('you are not logged in');",
-                    "}"
+                    ""
                 ],
                 "name": "click",
                 "scope": "me"
@@ -212,6 +232,76 @@
                 "scope": "me"
             },
             "designerId": "ad23e0aa-3aba-4cfa-86af-84138cca00d5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCancelSecurity",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onCancelSecurity_click",
+                "implHandler": [
+                    "var sqw = Ext.getCmp('securityQuestion');",
+                    "sqw.close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "7bd28dc0-8ec2-4a75-af36-ad9d3ee07d4a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnSubmitSecurity",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onSubmitSecurity_click",
+                "implHandler": [
+                    "var question = Ext.ComponentQuery.query('#comboSecurity')[0].value;",
+                    "console.dir(question);",
+                    "",
+                    "var answer = Ext.ComponentQuery.query('#txtSecurity')[0].value;",
+                    "console.dir(answer);",
+                    "",
+                    "if ( question === undefined ){",
+                    "    Ext.Msg.alert('Error','Please select a question first');",
+                    "    return;",
+                    "}",
+                    "",
+                    "if ( answer === undefined || answer.length === 0){",
+                    "    Ext.Msg.alert('Error','Please answer the question');",
+                    "    return;",
+                    "}",
+                    "",
+                    "//now that all is well, we can send the answer and question off to the server",
+                    "Ext.Ajax.request({",
+                    "    method:'POST',",
+                    "    url:'_data/update_Security.php',",
+                    "    params:{",
+                    "        'question':question,",
+                    "        'answer':answer",
+                    "    },",
+                    "    success:function(response){",
+                    "        var parser = Ext.create('PlanezSphere.parse.c5Parse',{});",
+                    "        if (parser.parseAjax(response) === true){",
+                    "            var sqw = Ext.getCmp('securityQuestion');",
+                    "            sqw.close();",
+                    "        }",
+                    "    }",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "d0e91e54-213c-47b4-827f-0afc14e8eaf5"
         }
     ]
 }

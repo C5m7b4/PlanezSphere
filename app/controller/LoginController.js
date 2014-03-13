@@ -24,10 +24,11 @@ Ext.define('PlanezSphere.controller.LoginController', {
     ],
     views: [
         'ForgotPassword',
-        'SecurityQuestion'
+        'SecurityQuestion',
+        'PasswordReset'
     ],
 
-    onLoginButtonClicked: function(button, e, eOpts) {
+    onLoginButton_Click: function(button, e, eOpts) {
         var username = Ext.ComponentQuery.query("#txtusername")[0].value;
         var password = Ext.ComponentQuery.query("#txtpassword")[0].value;
 
@@ -126,15 +127,15 @@ Ext.define('PlanezSphere.controller.LoginController', {
         }
     },
 
-    onCancelChangePassword_clicked: function(button, e, eOpts) {
+    onCancelChangePassword_click: function(button, e, eOpts) {
         var cp = Ext.getCmp('wdwChangePassword');
         cp.close();
     },
 
-    onSubmitChangePassword_clicked: function(button, e, eOpts) {
+    onSubmitChangePassword_click: function(button, e, eOpts) {
         var p1 = Ext.ComponentQuery.query('#changePassword')[0].value;
         var p2 = Ext.ComponentQuery.query('#confirmPassword')[0].value;
-        console.dir(p1);
+
 
         if ( p1 !== p2){
             Ext.Msg.alert('Error','Your Passwords do not match');
@@ -172,10 +173,10 @@ Ext.define('PlanezSphere.controller.LoginController', {
 
     onSubmitSecurity_click: function(button, e, eOpts) {
         var question = Ext.ComponentQuery.query('#comboSecurity')[0].value;
-        console.dir(question);
+
 
         var answer = Ext.ComponentQuery.query('#txtSecurity')[0].value;
-        console.dir(answer);
+
 
         if ( question === undefined ){
             Ext.Msg.alert('Error','Please select a question first');
@@ -205,19 +206,211 @@ Ext.define('PlanezSphere.controller.LoginController', {
         });
     },
 
+    onForgotPassword_click: function(button, e, eOpts) {
+        var cid = 'PlanezSphere.view.PasswordReset';
+        var shortname = cid.substr(cid.lastIndexOf(".")+1,cid.length);
+        if(Ext.get(shortname) != null){
+            Ext.get(shortname).destroy();
+        }
+
+        var fp = Ext.create('PlanezSphere.view.PasswordReset',{
+            height:196
+        });
+        Ext.getCmp('resetHiddenFields').setVisible(false);
+
+
+        var username = Ext.ComponentQuery.query('#txtusername')[0].value;
+        if ( username === undefined || username.length === 0){
+            Ext.Msg.alert('Error','Please enter your username before pressing the forgot password button');
+            return;
+        }
+
+
+
+        //get the security question from the users account to display
+        Ext.Ajax.request({
+            method:'POST',
+            url:'_data/read_UsersSecurity.php',
+            params:{
+                'username':username
+            },
+            success:function(response){
+
+                var parser = Ext.create('PlanezSphere.parse.c5Parse',{
+
+                });
+                if ( parser.parseAjax(response) === true){
+
+                    //now we need to parse out the question and answer out of the json string
+                    var args = response.responseText.split(',');
+                    //console.dir(args);
+
+                    var question = args[6].split(':');
+                    var answer = args[5].split(':');
+                    var email = args[7].split(':');
+
+
+                    question = question[1];
+                    question = question.replace(/\"/g,"");
+
+                    answer = answer[1];
+                    answer = answer.replace(/\"/g,"");
+
+                    email = email[1];
+                    email = email.replace(/\"/g,"");
+
+                    //console.log('q=' + question + ",a=" + answer + ",e=" + email);
+
+                    fp.insertUsername(username,question,answer,email);
+                    fp.show();
+                } else {
+                    console.log('false');
+                }
+            }
+        });
+
+    },
+
+    onResetCancel_click: function(button, e, eOpts) {
+        var rc = Ext.getCmp('passwordReset');
+        rc.close();
+    },
+
+    onResetSubmit_click: function(button, e, eOpts) {
+        var answer = Ext.ComponentQuery.query('#txtResetAnswer')[0].value;
+        if ( answer === undefined || answer.length === 0){
+            Ext.Msg.alert('Error','Please answer the Security Question');
+            return;
+        }
+
+        var email = Ext.ComponentQuery.query('#txtResetEmail')[0].value;
+        if ( email === undefined || email.length === 0 ){
+            Ext.Msg.alert('Error','Please enter an Email address');
+            return;
+        }
+
+        var localanswer = Ext.getCmp('passwordReset').answer;
+        console.log(localanswer);
+        if ( localanswer != answer){
+            Ext.Msg.alert('Error','Your answer is incorrect');
+            Ext.ComponentQuery.query('#txtResetAnswer')[0].focus(false,200);
+            return;
+        }
+
+        var localemail = Ext.getCmp('passwordReset').email;
+
+        if ( localemail !== email){
+            Ext.Msg.alert('Error','Email does not match Account');
+            Ext.ComponentQuery.query('#txtResetEmail')[0].focus(false,200);
+            return;
+        }
+
+
+        //now show the new password fields
+        var pr = Ext.getCmp('passwordReset');
+        pr.height = 320;
+        Ext.getCmp('resetHiddenFields').setVisible(true);
+
+        console.log('success');
+
+
+
+    },
+
+    onFinishResettingPassword_click: function(button, e, eOpts) {
+        console.log('we should not be here right now!!!!!');
+        var p1 = Ext.ComponentQuery.query('#txtResetPassword')[0].value;
+        var p2 = Ext.ComponentQuery.query('#txtResetConfirm')[0].value;
+        if ( p1 === undefined || p1.length === 0){
+            Ext.Msg.alert('Error', 'Please enter a password');
+            return;
+        }
+
+        if ( p2 === undefined || p2.length === 0){
+            Ext.Msg.alert('Error','Please confirm password');
+            return;
+        }
+
+        if ( p1 !== p2 ){
+            Ext.Msg.alert('Error','Your passwords do not match');
+            return;
+        }
+
+        var username = Ext.ComponentQuery.query('#lblWelcomeForgottenUser')[0].text;
+        var pos = username.indexOf(' ');
+        username = username.substring(pos,username.length);
+
+
+        Ext.Ajax.request({
+            method:'POST',
+            url:'_data/update_ResetPassword.php',
+            params:{
+                'username':username,
+                'password':p1
+            },
+            success:function(response){
+                var parser = Ext.create('PlanezSphere.parse.c5Parse',{});
+                if ( parser.parseAjax(response) === true){
+                    Ext.getCmp('passwordReset').close();
+                }
+            }
+        });
+
+    },
+
+    onResetPasswordFinishedButton_click: function(button, e, eOpts) {
+        var p1 = Ext.ComponentQuery.query('#txtResetPassword')[0].value;
+        var p2 = Ext.ComponentQuery.query('#txtResetConfirm')[0].value;
+        if ( p1 === undefined || p1.length === 0){
+            Ext.Msg.alert('Error', 'Please enter a password');
+            return;
+        }
+
+        if ( p2 === undefined || p2.length === 0){
+            Ext.Msg.alert('Error','Please confirm password');
+            return;
+        }
+
+        if ( p1 !== p2 ){
+            Ext.Msg.alert('Error','Your passwords do not match');
+            return;
+        }
+
+        var username = Ext.ComponentQuery.query('#lblWelcomeForgottenUser')[0].text;
+        var pos = username.indexOf(' ');
+        username = username.substring(pos,username.length);
+
+
+        Ext.Ajax.request({
+            method:'POST',
+            url:'_data/update_ResetPassword.php',
+            params:{
+                'username':username,
+                'password':p1
+            },
+            success:function(response){
+                var parser = Ext.create('PlanezSphere.parse.c5Parse',{});
+                if ( parser.parseAjax(response) === true){
+                    Ext.getCmp('passwordReset').close();
+                }
+            }
+        });
+
+    },
+
     init: function(application) {
         this.control({
             "#btnlogin": {
-                click: this.onLoginButtonClicked
+                click: this.onLoginButton_Click
             },
             "#txtpassword": {
                 specialkey: this.onLoginfieldSpecialkey
             },
             "#btnCancelChangePassword": {
-                click: this.onCancelChangePassword_clicked
+                click: this.onCancelChangePassword_click
             },
             "#btnSubmitChangePassword": {
-                click: this.onSubmitChangePassword_clicked
+                click: this.onSubmitChangePassword_click
             },
             "#confirmPassword": {
                 specialkey: this.onChangePasswordSpecialKeyUp
@@ -227,6 +420,21 @@ Ext.define('PlanezSphere.controller.LoginController', {
             },
             "#btnSubmitSecurity": {
                 click: this.onSubmitSecurity_click
+            },
+            "#btnForgotPassword": {
+                click: this.onForgotPassword_click
+            },
+            "#btnResetCancel": {
+                click: this.onResetCancel_click
+            },
+            "#btnResetSubmit": {
+                click: this.onResetSubmit_click
+            },
+            "#btnResetFinishPassword": {
+                click: this.onFinishResettingPassword_click
+            },
+            "#btnResetPasswordFinished": {
+                click: this.onResetPasswordFinishedButton_click
             }
         });
     }

@@ -144,6 +144,7 @@ Ext.define('PlanezSphere.view.MainViewport', {
                                                     xtype: 'button',
                                                     flex: 1,
                                                     cls: 'loginButton',
+                                                    itemId: 'btnForgotPassword',
                                                     margin: 5,
                                                     style: 'background-color:transparent;',
                                                     text: ' I forgot my Password'

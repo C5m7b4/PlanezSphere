@@ -266,6 +266,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "cls": "loginButton",
+                                                "itemId": "btnForgotPassword",
                                                 "layout|flex": 1,
                                                 "margin": 5,
                                                 "style": [

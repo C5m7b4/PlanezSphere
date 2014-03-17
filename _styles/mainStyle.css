@@ -10,7 +10,7 @@
     clear:both;
     background-image:url(../_images/dcrlogo.png);
     background-repeat:no-repeat;
-    margin-top:50px;
+    margin-top:50px;	
 }
 
 .planezsphere{
@@ -20,6 +20,7 @@
 	-moz-border-radius:10px !important;
 	-o-border-radius:10px !important;
 	border-radius:10px !important;
+	height:100px;
 }
 .loginButton {
 	background-color:transparent;

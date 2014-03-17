@@ -7,7 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
-            "LoginController"
+            "LoginController",
+            "MenuController"
         ],
         "name": "PlanezSphere",
         "requires": [

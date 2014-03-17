@@ -31,7 +31,8 @@ Ext.application({
         'MainViewport'
     ],
     controllers: [
-        'LoginController'
+        'LoginController',
+        'MenuController'
     ],
     name: 'PlanezSphere',
 

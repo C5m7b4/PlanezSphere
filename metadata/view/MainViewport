@@ -349,7 +349,116 @@
                         "itemId": "modules",
                         "padding": 20
                     },
-                    "designerId": "0f5e4feb-508b-4e08-9e16-40cec1152dad"
+                    "designerId": "0f5e4feb-508b-4e08-9e16-40cec1152dad",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "3ad9c9ff-0c30-4759-912e-c008f721db05",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "designerId": "61914d6c-f304-4c50-b64d-da829b0b9999",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "margin": "0 0 0 10",
+                                                "text": "Users"
+                                            },
+                                            "designerId": "60ffd816-02ad-4e42-8af3-485fd41588d3"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "margin": "0 10 0 10",
+                                                "text": "Companies"
+                                            },
+                                            "designerId": "30820a7d-e366-4b41-b682-cc88058b62cc",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.menu.Menu",
+                                                    "reference": {
+                                                        "name": "menu",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "designerId": "cbbdafcf-3d0e-4536-b53d-d75b2705ea35",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.menu.Item",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "btnAddCompany",
+                                                                "text": "Add"
+                                                            },
+                                                            "designerId": "07b194f6-dd92-4d20-a63e-592ab04a7382"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "end",
+                                        "layout": "hbox",
+                                        "layout|flex": 1
+                                    },
+                                    "designerId": "b5d1a4c6-b176-41d7-8751-8f8e0cc4b971",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|margins": "0 10 0 0",
+                                                "text": "Logout"
+                                            },
+                                            "designerId": "21969d17-d547-44c7-bf6d-bab91732edda"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

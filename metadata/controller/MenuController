@@ -1,0 +1,30 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MenuController"
+    },
+    "designerId": "00ebb048-ec78-4e81-8a60-74e2ff8f86c6",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnAddCompany",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onNewCompanyButton_click",
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "a936a162-b72b-46cc-9bdd-7f06cadeb83c"
+        }
+    ]
+}

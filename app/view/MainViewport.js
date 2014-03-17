@@ -20,7 +20,10 @@ Ext.define('PlanezSphere.view.MainViewport', {
         'Ext.form.FieldSet',
         'Ext.form.field.Text',
         'Ext.form.field.Checkbox',
-        'Ext.button.Button'
+        'Ext.button.Button',
+        'Ext.toolbar.Toolbar',
+        'Ext.menu.Menu',
+        'Ext.menu.Item'
     ],
 
     layout: 'border',
@@ -175,7 +178,55 @@ Ext.define('PlanezSphere.view.MainViewport', {
                             html: '<div class="saturn">\n    <a href="/~mikebedingfield/Orion_Project/index.php" target="_blank"><img src="_images/saturn2.jpg" alt="saturn" height="150" width="150" id="picSaturn" /></a>\n</div>\n<div class="earth">\n    <a href="#" target="_blank"><img src="_images/earth.jpeg" alt="earth" height="150" width="150" /></a>\n</div>\n<div class="jupiter">\n    <a href="#" target="_blank"><img src="_images/jupiter.jpg" alt="jupiter" height="150" width="150" /></a>\n</div>\n<div class="mars">\n    <a href="#" target="_blank"><img src="_images/mars.jpeg" alt="mars" height="150" width="150" /></a>\n</div>',
                             id: 'modules',
                             itemId: 'modules',
-                            padding: 20
+                            padding: 20,
+                            items: [
+                                {
+                                    xtype: 'toolbar',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    margin: '0 0 0 10',
+                                                    text: 'Users'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    margin: '0 10 0 10',
+                                                    text: 'Companies',
+                                                    menu: {
+                                                        xtype: 'menu',
+                                                        items: [
+                                                            {
+                                                                xtype: 'menuitem',
+                                                                itemId: 'btnAddCompany',
+                                                                text: 'Add'
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            flex: 1,
+                                            layout: {
+                                                type: 'hbox',
+                                                align: 'stretch',
+                                                pack: 'end'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    margins: '0 10 0 0',
+                                                    text: 'Logout'
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

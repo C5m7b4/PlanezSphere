@@ -22,7 +22,7 @@
             "userConfig": {
                 "container|align": "stretch",
                 "designer|displayName": "north region",
-                "height": 150,
+                "height": 100,
                 "layout": "hbox",
                 "layout|region": "north"
             },
@@ -52,7 +52,7 @@
                         "container|align": "stretch",
                         "container|pack": "center",
                         "designer|displayName": "banner",
-                        "height": 150,
+                        "height": 100,
                         "layout": "hbox",
                         "layout|flex": 6
                     },

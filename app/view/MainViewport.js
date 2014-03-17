@@ -33,7 +33,7 @@ Ext.define('PlanezSphere.view.MainViewport', {
                 {
                     xtype: 'container',
                     region: 'north',
-                    height: 150,
+                    height: 100,
                     layout: {
                         type: 'hbox',
                         align: 'stretch'
@@ -47,7 +47,7 @@ Ext.define('PlanezSphere.view.MainViewport', {
                             xtype: 'container',
                             flex: 6,
                             cls: 'planezsphere',
-                            height: 150,
+                            height: 100,
                             layout: {
                                 type: 'hbox',
                                 align: 'stretch',

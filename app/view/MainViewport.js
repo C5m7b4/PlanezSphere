@@ -172,7 +172,7 @@ Ext.define('PlanezSphere.view.MainViewport', {
                         {
                             xtype: 'container',
                             hidden: true,
-                            html: '<div class="saturn">\n    <img src="_images/saturn.png" alt="saturn" height="150" width="200" id="picSaturn" />\n</div>',
+                            html: '<div class="saturn">\n    <a href="/~mikebedingfield/Orion_Project/index.php" target="_blank"><img src="_images/saturn.png" alt="saturn" height="150" width="200" id="picSaturn" /></a>\n</div>',
                             id: 'modules',
                             itemId: 'modules',
                             padding: 20

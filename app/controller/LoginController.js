@@ -117,7 +117,8 @@ Ext.define('PlanezSphere.controller.LoginController', {
 
         function doLogin(){
             var cardLayout = Ext.getCmp('masterCardLayout');
-            cardLayout.getLayout().setActiveItem(1);
+            console.dir(cardLayout);
+            //cardLayout.getLayout().setActiveItem(1);
         }
     },
 

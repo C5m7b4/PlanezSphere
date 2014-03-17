@@ -24,10 +24,12 @@ Ext.application({
     requires: [
         'Ext.window.MessageBox',
         'PlanezSphere.parse.c5Parse',
-        'Ext.layout.container.Border'
+        'Ext.layout.container.Border',
+        'Ext.layout.container.Card'
     ],
     views: [
-        'MainViewport'
+        'MainViewport',
+        null
     ],
     controllers: [
         'LoginController'

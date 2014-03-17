@@ -32,11 +32,11 @@ Ext.define('PlanezSphere.controller.LoginController', {
         var username = Ext.ComponentQuery.query("#txtusername")[0].value;
         var password = Ext.ComponentQuery.query("#txtpassword")[0].value;
 
-        if ( username == undefined || username.length == 0){
+        if ( username === undefined || username.length === 0){
             Ext.Msg.alert('Error','Please enter a username');
             return;
         }
-        if ( password == undefined || password.length == 0){
+        if ( password === undefined || password.length === 0){
             Ext.Msg.alert('Error','Please enter a Password');
             return;
         }
@@ -49,7 +49,8 @@ Ext.define('PlanezSphere.controller.LoginController', {
             },
             success:function(response){
                 try{
-                    console.dir(response);
+                    var decode = Ext.decode(response.responseText);
+                    console.dir(decode);
                     var result = response.responseText;
                     var responseArray = response.responseText.split(",");
                     var message = responseArray[1];
@@ -59,7 +60,7 @@ Ext.define('PlanezSphere.controller.LoginController', {
                     switch(code)
                     {
                         case "0":
-                            //document.location='_includes/debug.php';
+                            doLogin();
                             break;
                         case "1":
                             Ext.Msg.alert('Alert','Internal Error 501, No Username Found');
@@ -92,15 +93,15 @@ Ext.define('PlanezSphere.controller.LoginController', {
                             break;
                         case "11":
                             //security question needs set and forgot password needs set
-                            var fp = Ext.create('PlanezSphere.view.ForgotPassword',{
+                            var fp1 = Ext.create('PlanezSphere.view.ForgotPassword',{
 
                             });
-                            fp.on('close',function(e){
+                            fp1.on('close',function(e){
                                 var sq = Ext.create('PlanezSphere.view.SecurityQuestion',{});
                                 sq.show();
                                 doLogin();
                             });
-                            fp.show();
+                            fp1.show();
 
                             break;
                         default:
@@ -115,7 +116,8 @@ Ext.define('PlanezSphere.controller.LoginController', {
         });
 
         function doLogin(){
-            console.log("you are now logged into our system");
+            var cardLayout = Ext.getCmp('masterCardLayout');
+            cardLayout.getLayout().setActiveItem(1);
         }
     },
 

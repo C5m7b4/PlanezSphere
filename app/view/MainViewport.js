@@ -45,7 +45,7 @@ Ext.define('PlanezSphere.view.MainViewport', {
                         },
                         {
                             xtype: 'container',
-                            flex: 7,
+                            flex: 6,
                             cls: 'planezsphere',
                             height: 150,
                             layout: {
@@ -63,101 +63,124 @@ Ext.define('PlanezSphere.view.MainViewport', {
                 {
                     xtype: 'container',
                     region: 'center',
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch'
-                    },
+                    id: 'masterCardLayout',
+                    itemId: 'masterCardLayout',
+                    layout: 'card',
                     items: [
                         {
                             xtype: 'container',
-                            flex: 1,
-                            html: '<div class="leftColumn">\n    <div class="img"><img src="_images/M42.png" alt="M42" height="150" width="200" /></div>\n</div>'
-                        },
-                        {
-                            xtype: 'container',
-                            flex: 1,
+                            itemId: 'loginCard',
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch'
+                            },
                             items: [
                                 {
                                     xtype: 'container',
-                                    minHeight: 200
+                                    flex: 1,
+                                    html: '<div class="leftColumn">\n    <img src="_images/M42.png" class="img" alt="M42" height="150" width="200" />\n    <img src="_images/M81.png" class="img" alt="M81" height="150" width="200" />\n    <img src="_images/M82.png" class="img" alt="M82" height="150" width="200" />\n</div>'
                                 },
                                 {
-                                    xtype: 'fieldset',
-                                    border: 0,
-                                    itemId: 'txtusername',
-                                    padding: 10,
-                                    title: 'Login',
+                                    xtype: 'container',
+                                    flex: 1,
                                     items: [
                                         {
-                                            xtype: 'textfield',
-                                            anchor: '100%',
+                                            xtype: 'container',
+                                            minHeight: 200
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            border: 0,
                                             itemId: 'txtusername',
-                                            fieldLabel: 'Username',
-                                            labelAlign: 'right',
-                                            listeners: {
-                                                afterrender: {
-                                                    fn: me.onTxtusernameAfterRender,
-                                                    scope: me
-                                                }
-                                            }
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            anchor: '100%',
-                                            itemId: 'txtpassword',
-                                            fieldLabel: 'Password',
-                                            labelAlign: 'right',
-                                            inputType: 'password'
-                                        },
-                                        {
-                                            xtype: 'container',
-                                            layout: {
-                                                type: 'vbox',
-                                                align: 'center',
-                                                pack: 'end'
-                                            },
+                                            padding: 10,
+                                            title: 'Login',
                                             items: [
                                                 {
-                                                    xtype: 'checkboxfield',
-                                                    flex: 1,
-                                                    boxLabel: 'Remember Me',
-                                                    boxLabelAlign: 'before'
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            xtype: 'container',
-                                            layout: {
-                                                type: 'vbox',
-                                                align: 'center',
-                                                pack: 'center'
-                                            },
-                                            items: [
-                                                {
-                                                    xtype: 'button',
-                                                    flex: 1,
-                                                    itemId: 'btnlogin',
-                                                    margin: 10,
-                                                    text: 'Login'
+                                                    xtype: 'textfield',
+                                                    anchor: '100%',
+                                                    itemId: 'txtusername',
+                                                    fieldLabel: 'Username',
+                                                    labelAlign: 'right',
+                                                    listeners: {
+                                                        afterrender: {
+                                                            fn: me.onTxtusernameAfterRender,
+                                                            scope: me
+                                                        }
+                                                    }
                                                 },
                                                 {
-                                                    xtype: 'button',
-                                                    flex: 1,
-                                                    cls: 'loginButton',
-                                                    itemId: 'btnForgotPassword',
-                                                    margin: 5,
-                                                    style: 'background-color:transparent;',
-                                                    text: ' I forgot my Password'
+                                                    xtype: 'textfield',
+                                                    anchor: '100%',
+                                                    itemId: 'txtpassword',
+                                                    fieldLabel: 'Password',
+                                                    labelAlign: 'right',
+                                                    inputType: 'password'
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        align: 'center',
+                                                        pack: 'end'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'checkboxfield',
+                                                            flex: 1,
+                                                            boxLabel: 'Remember Me',
+                                                            boxLabelAlign: 'before'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    layout: {
+                                                        type: 'vbox',
+                                                        align: 'center',
+                                                        pack: 'center'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'button',
+                                                            flex: 1,
+                                                            itemId: 'btnlogin',
+                                                            margin: 10,
+                                                            text: 'Login'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            flex: 1,
+                                                            cls: 'loginButton',
+                                                            itemId: 'btnForgotPassword',
+                                                            margin: 5,
+                                                            style: 'background-color:transparent;',
+                                                            text: ' I forgot my Password'
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
                                     ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    flex: 1,
+                                    html: '<div class="rightColumn">\n    <img src="_images/rosette1.png" class="img" alt="Rosette Nebula" height="150" width="200" />\n    <img src="_images/moon.png" class="img" alt="Moon" height="150" width="200" />\n    <img src="_images/rig.jpg" class="img" alt="My rig" height="150" width="200" />\n</div>'
                                 }
                             ]
                         },
                         {
                             xtype: 'container',
-                            flex: 1
+                            hidden: true,
+                            id: 'modules',
+                            itemId: 'modules',
+                            padding: 20,
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    fieldLabel: 'test'
+                                }
+                            ]
                         }
                     ]
                 }

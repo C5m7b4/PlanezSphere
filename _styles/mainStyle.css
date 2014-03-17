@@ -16,18 +16,30 @@
 .planezsphere{
     background-image:url(../_images/banner.png);
     background-repeat:no-repeat;
+    -webkit-border-radius:10px !important;
+	-moz-border-radius:10px !important;
+	-o-border-radius:10px !important;
+	border-radius:10px !important;
 }
 .loginButton {
 	background-color:transparent;
 }
 .leftColumn{
-	text-align:center;
+	text-align:right;
+	padding:30px;
+	//border:1px solid white;
+}
+.rightColumn{
+	text-align:left;
+	padding:30px;
 }
 .img {
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-	-o-border-radius:10px;
-	border-radius:10px;
+	-webkit-border-radius:10px !important;
+	-moz-border-radius:10px !important;
+	-o-border-radius:10px !important;
+	border-radius:10px !important;
+	-webkit-box-shadow: 3px 3px 5px black;
+	margin:10px 0 0 0;
 }
 
 

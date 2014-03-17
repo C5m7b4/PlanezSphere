@@ -56,7 +56,7 @@
 						}
 						else
 						{
-							echo '{success:true,error:'.$returncode.'}';
+							echo '{success:true,error:'.$returncode.',msg:Internal Permission error,Error:606}';
 							return;
 						}
 						
@@ -65,30 +65,30 @@
 				if ( $foundUsername == true)
 				{
 					//bad password
-					echo '{success:true,error:5}';					
+					echo '{success:true,error:5,msg:Bad Username,Error:605}';					
 				}
 				else
 				{
 					//bad username
-					echo '{success:true,error:4}';	
+					echo '{success:true,error:4,msg:"Bad Username",Error:604}';	
 				}				
 			}
 			else
 			{
 				//no data returned
-				echo '{success:true,error:3}';	
+				echo '{success:true,error:3,msg:Server returned no data,Error:603}';	
 			}
 		}
 		else
 		{
 			//no password
-			echo '{success:true,error:2}';	
+			echo '{success:true,error:2,msg:No Password Found,Error:602}';	
 		}
 	}
 	else
 	{
 		//no username
-		echo '{success:true,error:1}';	
+		echo '{success:true,error:1,msg:No Username found,Error:601}';	
 	}
 
 ?>

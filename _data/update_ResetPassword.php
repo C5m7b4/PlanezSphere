@@ -21,17 +21,17 @@
 			}
 			else
 			{
-				echo '{success:true,error:3,msg:Server Error,Error:519,blank:1}';
+				echo '{success:true,error:3,msg:Server Error,Error:519}';
 			}
 		}
 		else
 		{
-			echo '{success:true,error:2,msg:No Password found,Error:518,blank:1}';
+			echo '{success:true,error:2,msg:No Password found,Error:518}';
 		}
 	}
 	else
 	{
-		echo '{success:true,error:1,msg:No Username Found,Error:517,blank:1}';
+		echo '{success:true,error:1,msg:No Username Found,Error:517}';
 	}
 	
 ?>

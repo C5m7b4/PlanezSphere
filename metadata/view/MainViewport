@@ -331,25 +331,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
+                        "html": [
+                            "<div class=\"saturn\">",
+                            "    <img src=\"_images/saturn.png\" alt=\"saturn\" height=\"150\" width=\"200\" id=\"picSaturn\" />",
+                            "</div>"
+                        ],
                         "id": "modules",
                         "itemId": "modules",
                         "padding": 20
                     },
-                    "designerId": "0f5e4feb-508b-4e08-9e16-40cec1152dad",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "test"
-                            },
-                            "designerId": "c8a918c7-54bb-4581-9155-aa269712a8f8"
-                        }
-                    ]
+                    "designerId": "0f5e4feb-508b-4e08-9e16-40cec1152dad"
                 }
             ]
         }

@@ -1,0 +1,15 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css1",
+        "id": "universe",
+        "update": "full",
+        "url": "_styles/universe.css"
+    },
+    "designerId": "d4a7bf78-00bb-4657-b4e4-bc8cdd792fa0"
+}

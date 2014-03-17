@@ -828,9 +828,17 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.Window"
   ],
   "PlanezSphere.Application": [],
+  "PlanezSphere.controller.LoginController": [],
   "PlanezSphere.controller.Main": [],
+  "PlanezSphere.model.SecurityQuestionModel": [],
+  "PlanezSphere.parse.c5Parse": [],
+  "PlanezSphere.store.SecurityQuestionStore": [],
+  "PlanezSphere.view.ForgotPassword": [],
   "PlanezSphere.view.Main": [],
-  "PlanezSphere.view.MyViewport": [],
+  "PlanezSphere.view.MainViewport": [],
+  "PlanezSphere.view.MyViewport1": [],
+  "PlanezSphere.view.PasswordReset": [],
+  "PlanezSphere.view.SecurityQuestion": [],
   "PlanezSphere.view.Viewport": []
 });
 Ext.ClassManager.addNameAliasMappings({
@@ -1819,11 +1827,25 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.window"
   ],
   "PlanezSphere.Application": [],
+  "PlanezSphere.controller.LoginController": [],
   "PlanezSphere.controller.Main": [],
+  "PlanezSphere.model.SecurityQuestionModel": [],
+  "PlanezSphere.parse.c5Parse": [
+    "widget.c5Parse"
+  ],
+  "PlanezSphere.store.SecurityQuestionStore": [],
+  "PlanezSphere.view.ForgotPassword": [
+    "widget.forgotPassword"
+  ],
   "PlanezSphere.view.Main": [
     "widget.app-main"
   ],
-  "PlanezSphere.view.MyViewport": [],
+  "PlanezSphere.view.MainViewport": [],
+  "PlanezSphere.view.MyViewport1": [],
+  "PlanezSphere.view.PasswordReset": [
+    "widget.passwordReset"
+  ],
+  "PlanezSphere.view.SecurityQuestion": [],
   "PlanezSphere.view.Viewport": []
 });
 Ext.setVersion("ext-theme-access", "4.2.1");

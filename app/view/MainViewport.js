@@ -172,15 +172,10 @@ Ext.define('PlanezSphere.view.MainViewport', {
                         {
                             xtype: 'container',
                             hidden: true,
+                            html: '<div class="saturn">\n    <img src="_images/saturn.png" alt="saturn" height="150" width="200" id="picSaturn" />\n</div>',
                             id: 'modules',
                             itemId: 'modules',
-                            padding: 20,
-                            items: [
-                                {
-                                    xtype: 'textfield',
-                                    fieldLabel: 'test'
-                                }
-                            ]
+                            padding: 20
                         }
                     ]
                 }

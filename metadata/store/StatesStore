@@ -1,0 +1,39 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StatesStore",
+        "model": "StatesModel",
+        "storeId": "StatesStore"
+    },
+    "designerId": "fa44e727-3560-43cb-90cb-a0a4e34cc91c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "_data/read_States.php"
+            },
+            "designerId": "1f7761e3-64fe-4d54-95ab-d39688db3c5f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "d803011e-4162-4529-bff5-08c7476df5ff"
+                }
+            ]
+        }
+    ]
+}

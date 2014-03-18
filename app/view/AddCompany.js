@@ -89,7 +89,7 @@ Ext.define('PlanezSphere.view.AddCompany', {
                             flex: 1,
                             itemId: 'txtCompanyCity',
                             maxHeight: 27,
-                            maxWidth: 350,
+                            maxWidth: 300,
                             fieldLabel: 'City',
                             labelAlign: 'right',
                             labelWidth: 125
@@ -99,10 +99,15 @@ Ext.define('PlanezSphere.view.AddCompany', {
                             flex: 1,
                             itemId: 'comboCompanyState',
                             maxHeight: 27,
-                            maxWidth: 150,
+                            maxWidth: 250,
                             fieldLabel: 'State',
                             labelAlign: 'right',
-                            labelWidth: 75
+                            labelWidth: 75,
+                            displayField: 'name',
+                            queryMode: 'local',
+                            store: 'StatesStore',
+                            typeAhead: true,
+                            valueField: 'abbr'
                         }
                     ]
                 },
@@ -186,10 +191,20 @@ Ext.define('PlanezSphere.view.AddCompany', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onWindowAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onWindowAfterRender: function(component, eOpts) {
+        Ext.data.StoreManager.lookup('StatesStore').load();
     }
 
 });

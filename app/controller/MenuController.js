@@ -17,7 +17,14 @@ Ext.define('PlanezSphere.controller.MenuController', {
     extend: 'Ext.app.Controller',
 
     onNewCompanyButton_click: function(button, e, eOpts) {
+        var cid = 'PlanezSphere.view.AddCompany';
+        var shortname = cid.substr(cid.lastIndexOf(".")+1,cid.length);
+        if ( Ext.get(shortname) === null){
+            var ac = Ext.create('PlanezSphere.view.AddCompany',{
 
+            });
+            ac.show();
+        }
     },
 
     init: function(application) {

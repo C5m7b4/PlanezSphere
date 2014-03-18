@@ -21,6 +21,16 @@
                 "designer|controlQuery": "#btnAddCompany",
                 "designer|targetType": "Ext.button.Button",
                 "fn": "onNewCompanyButton_click",
+                "implHandler": [
+                    "var cid = 'PlanezSphere.view.AddCompany';",
+                    "var shortname = cid.substr(cid.lastIndexOf(\".\")+1,cid.length);",
+                    "if ( Ext.get(shortname) === null){",
+                    "    var ac = Ext.create('PlanezSphere.view.AddCompany',{",
+                    "        ",
+                    "    });",
+                    "    ac.show();",
+                    "}"
+                ],
                 "name": "click",
                 "scope": "me"
             },

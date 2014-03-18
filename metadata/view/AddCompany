@@ -124,7 +124,7 @@
                         "labelWidth": 125,
                         "layout|flex": 1,
                         "maxHeight": 27,
-                        "maxWidth": 350
+                        "maxWidth": 300
                     },
                     "designerId": "d248b3b6-6c38-4e38-a297-12e2522be3fb"
                 },
@@ -136,13 +136,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "displayField": "name",
                         "fieldLabel": "State",
                         "itemId": "comboCompanyState",
                         "labelAlign": "right",
                         "labelWidth": 75,
                         "layout|flex": 1,
                         "maxHeight": 27,
-                        "maxWidth": 150
+                        "maxWidth": 250,
+                        "queryMode": "local",
+                        "store": "StatesStore",
+                        "typeAhead": true,
+                        "valueField": "abbr"
                     },
                     "designerId": "778bf11b-8efd-43fe-abb0-2b3bcae0e183"
                 }
@@ -290,6 +295,23 @@
                     "designerId": "c4904336-255f-4283-9f67-09c8af5c292a"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "Ext.data.StoreManager.lookup('StatesStore').load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "6f54b838-03d2-46b8-8d4b-7501b8eb5373"
         }
     ]
 }

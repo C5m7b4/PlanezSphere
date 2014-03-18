@@ -27,6 +27,12 @@ Ext.application({
         'Ext.layout.container.Border',
         'Ext.layout.container.Card'
     ],
+    models: [
+        'StatesModel'
+    ],
+    stores: [
+        'StatesStore'
+    ],
     views: [
         'MainViewport',
         'AddCompany'

@@ -1,0 +1,39 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ContactsStore",
+        "model": "ContactModel",
+        "storeId": "ContactsStore"
+    },
+    "designerId": "1c69a469-71b9-4a93-8399-2338e53c43c7",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "_data/read_Contacts.php"
+            },
+            "designerId": "e0ddbab1-1916-4b1f-a069-bf3da48b7d14",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "b5d4adaf-565e-4736-9793-418357ea0f27"
+                }
+            ]
+        }
+    ]
+}

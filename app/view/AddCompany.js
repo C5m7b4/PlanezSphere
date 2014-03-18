@@ -25,6 +25,7 @@ Ext.define('PlanezSphere.view.AddCompany', {
     ],
 
     height: 336,
+    id: 'AddCompanyWindow',
     width: 565,
     autoScroll: true,
     bodyPadding: 15,
@@ -137,7 +138,12 @@ Ext.define('PlanezSphere.view.AddCompany', {
                             itemId: 'comboStoreContact',
                             maxHeight: 27,
                             fieldLabel: 'Contact',
-                            labelAlign: 'right'
+                            labelAlign: 'right',
+                            displayField: 'username',
+                            queryMode: 'local',
+                            store: 'ContactsStore',
+                            typeAhead: true,
+                            valueField: 'id'
                         }
                     ]
                 },
@@ -149,8 +155,7 @@ Ext.define('PlanezSphere.view.AddCompany', {
                     maxWidth: 300,
                     fieldLabel: 'Phone',
                     labelAlign: 'right',
-                    labelWidth: 125,
-                    inputType: 'tel'
+                    labelWidth: 125
                 },
                 {
                     xtype: 'checkboxfield',
@@ -205,6 +210,7 @@ Ext.define('PlanezSphere.view.AddCompany', {
 
     onWindowAfterRender: function(component, eOpts) {
         Ext.data.StoreManager.lookup('StatesStore').load();
+        Ext.data.StoreManager.lookup('ContactsStore').load();
     }
 
 });

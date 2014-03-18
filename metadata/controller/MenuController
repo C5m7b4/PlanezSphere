@@ -6,7 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MenuController"
+        "designer|userClassName": "MenuController",
+        "models": [
+            "StatesModel",
+            "ContactModel"
+        ],
+        "stores": [
+            "StatesStore",
+            "ContactsStore"
+        ],
+        "views": [
+            "AddCompany"
+        ]
     },
     "designerId": "00ebb048-ec78-4e81-8a60-74e2ff8f86c6",
     "cn": [
@@ -26,7 +37,7 @@
                     "var shortname = cid.substr(cid.lastIndexOf(\".\")+1,cid.length);",
                     "if ( Ext.get(shortname) === null){",
                     "    var ac = Ext.create('PlanezSphere.view.AddCompany',{",
-                    "        ",
+                    "",
                     "    });",
                     "    ac.show();",
                     "}"
@@ -35,6 +46,74 @@
                 "scope": "me"
             },
             "designerId": "a936a162-b72b-46cc-9bdd-7f06cadeb83c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCancelAddCompany",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onCancelAddCompany_click",
+                "implHandler": [
+                    "Ext.getCmp('AddCompanyWindow').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "fd87bf20-80e8-48bd-a5e1-3bcf62f4300d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnSubmitCompany",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onSubmitCompany_click",
+                "implHandler": [
+                    "var companyname = Ext.ComponentQuery.query('#txtCompanyName')[0].value;",
+                    "var address = Ext.ComponentQuery.query('#txtCompanyAddress')[0].value;",
+                    "var city = Ext.ComponentQuery.query('#txtCompanyCity')[0].value;",
+                    "var state = Ext.ComponentQuery.query('#comboCompanyState')[0].value;",
+                    "var zip = Ext.ComponentQuery.query('#txtCompanyZip')[0].value;",
+                    "var contact = Ext.ComponentQuery.query('#comboStoreContact')[0].value;",
+                    "var phone = Ext.ComponentQuery.query('#txtCompanyPhone')[0].value;",
+                    "var active = Ext.ComponentQuery.query('#checkCompanyActive')[0].value;",
+                    "console.log('active=' + active);",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    method:'POST',",
+                    "    url:'_data/create_Company.php',",
+                    "    params:{",
+                    "        'name':companyname,",
+                    "        'address':address,",
+                    "        'city':city,",
+                    "        'state':state,",
+                    "        'zip':zip,",
+                    "        'contact':contact,",
+                    "        'phone':phone,",
+                    "        'active':active",
+                    "    },",
+                    "    success:function(response){",
+                    "        var parser = Ext.create('PlanezSphere.parse.c5Parse',{});",
+                    "        if (parser.parseAjax(response) === true){",
+                    "            Ext.getCmp('AddCompanyWindow').close();",
+                    "        }",
+                    "    }",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "2752ec1d-c120-480b-b230-e60527abf629"
         }
     ]
 }

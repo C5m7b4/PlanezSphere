@@ -11,6 +11,7 @@
         "container|align": "stretch",
         "designer|userClassName": "AddCompany",
         "height": 336,
+        "id": "AddCompanyWindow",
         "layout": "vbox",
         "title": "Add Company",
         "width": 565
@@ -197,11 +198,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "displayField": "username",
                         "fieldLabel": "Contact",
                         "itemId": "comboStoreContact",
                         "labelAlign": "right",
                         "layout|flex": 1,
-                        "maxHeight": 27
+                        "maxHeight": 27,
+                        "queryMode": "local",
+                        "store": "ContactsStore",
+                        "typeAhead": true,
+                        "valueField": "id"
                     },
                     "designerId": "de24de91-2c99-455c-97fa-16aefed60d4d"
                 }
@@ -216,7 +222,6 @@
             "codeClass": null,
             "userConfig": {
                 "fieldLabel": "Phone",
-                "inputType": "tel",
                 "itemId": "txtCompanyPhone",
                 "labelAlign": "right",
                 "labelWidth": 125,
@@ -306,7 +311,8 @@
             "userConfig": {
                 "fn": "onWindowAfterRender",
                 "implHandler": [
-                    "Ext.data.StoreManager.lookup('StatesStore').load();"
+                    "Ext.data.StoreManager.lookup('StatesStore').load();",
+                    "Ext.data.StoreManager.lookup('ContactsStore').load();"
                 ],
                 "name": "afterrender",
                 "scope": "me"

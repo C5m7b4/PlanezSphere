@@ -16,6 +16,18 @@
 Ext.define('PlanezSphere.controller.MenuController', {
     extend: 'Ext.app.Controller',
 
+    models: [
+        'StatesModel',
+        'ContactModel'
+    ],
+    stores: [
+        'StatesStore',
+        'ContactsStore'
+    ],
+    views: [
+        'AddCompany'
+    ],
+
     onNewCompanyButton_click: function(button, e, eOpts) {
         var cid = 'PlanezSphere.view.AddCompany';
         var shortname = cid.substr(cid.lastIndexOf(".")+1,cid.length);
@@ -27,10 +39,54 @@ Ext.define('PlanezSphere.controller.MenuController', {
         }
     },
 
+    onCancelAddCompany_click: function(button, e, eOpts) {
+        Ext.getCmp('AddCompanyWindow').close();
+    },
+
+    onSubmitCompany_click: function(button, e, eOpts) {
+        var companyname = Ext.ComponentQuery.query('#txtCompanyName')[0].value;
+        var address = Ext.ComponentQuery.query('#txtCompanyAddress')[0].value;
+        var city = Ext.ComponentQuery.query('#txtCompanyCity')[0].value;
+        var state = Ext.ComponentQuery.query('#comboCompanyState')[0].value;
+        var zip = Ext.ComponentQuery.query('#txtCompanyZip')[0].value;
+        var contact = Ext.ComponentQuery.query('#comboStoreContact')[0].value;
+        var phone = Ext.ComponentQuery.query('#txtCompanyPhone')[0].value;
+        var active = Ext.ComponentQuery.query('#checkCompanyActive')[0].value;
+        console.log('active=' + active);
+
+        Ext.Ajax.request({
+            method:'POST',
+            url:'_data/create_Company.php',
+            params:{
+                'name':companyname,
+                'address':address,
+                'city':city,
+                'state':state,
+                'zip':zip,
+                'contact':contact,
+                'phone':phone,
+                'active':active
+            },
+            success:function(response){
+                var parser = Ext.create('PlanezSphere.parse.c5Parse',{});
+                if (parser.parseAjax(response) === true){
+                    Ext.getCmp('AddCompanyWindow').close();
+                }
+            }
+        });
+
+    },
+
     init: function(application) {
         this.control({
             "#btnAddCompany": {
                 click: this.onNewCompanyButton_click
+            },
+            "#btnCancelAddCompany": {
+                click: this.onCancelAddCompany_click
+            },
+            "#btnSubmitCompany": {
+                click: this.onSubmitCompany_click
             }
         });
     }

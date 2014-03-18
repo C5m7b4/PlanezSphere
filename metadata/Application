@@ -10,9 +10,6 @@
             "LoginController",
             "MenuController"
         ],
-        "models": [
-            "StatesModel"
-        ],
         "name": "PlanezSphere",
         "requires": [
             "Ext.window.MessageBox",
@@ -20,12 +17,8 @@
             "Ext.layout.container.Border",
             "Ext.layout.container.Card"
         ],
-        "stores": [
-            "StatesStore"
-        ],
         "views": [
-            "MainViewport",
-            "AddCompany"
+            "MainViewport"
         ]
     },
     "designerId": "application"

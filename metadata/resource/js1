@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js1",
+        "id": "maskedInput.js",
+        "url": "_scripts/maskedInput.js"
+    },
+    "designerId": "5e0a9cc8-08a7-42a0-a15d-e7b6403b219c"
+}

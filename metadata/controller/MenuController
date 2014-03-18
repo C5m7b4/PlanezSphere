@@ -114,6 +114,30 @@
                 "scope": "me"
             },
             "designerId": "2752ec1d-c120-480b-b230-e60527abf629"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnAddUser",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onAddUser_click",
+                "implHandler": [
+                    "var cid = 'PlanezSphere.view.AddUserWindow';",
+                    "var shortname = cid.substr(cid.lastIndexOf(\".\")+1,cid.length);",
+                    "if ( Ext.get(shortname) === null){",
+                    "    var au = Ext.create('PlanezSphere.view.AddUserWindow',{});",
+                    "    au.show();",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "7f7a4f41-99a0-4dd9-ae26-f863768245a3"
         }
     ]
 }

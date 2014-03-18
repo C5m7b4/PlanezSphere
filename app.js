@@ -32,7 +32,8 @@ Ext.application({
     ],
     controllers: [
         'LoginController',
-        'MenuController'
+        'MenuController',
+        'UserController'
     ],
     name: 'PlanezSphere',
 

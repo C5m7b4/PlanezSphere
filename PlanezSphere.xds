@@ -21,8 +21,9 @@
         "lineEnding": "LF",
         "genTimestamps": false,
         "cacheBust": false,
-        "buildShouldOverwriteIndex": true,
-        "generateArchitectVersion": true
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "displayfield-ExtBox1-1276-inputEl": "Not Installed"
     },
     "xdsVersion": "3.0.3",
     "xdsBuild": 1382,
@@ -35,28 +36,36 @@
             "3cb4e8f1-70f4-4b8a-a1ee-3a63b803bc79",
             "51bc3ba8-575a-446c-993d-7b5d27bc2b24",
             "1348c6de-efa1-400d-96fa-166b9b58f1b3",
-            "974e7282-58bb-4371-8f0a-54c555de8723"
+            "974e7282-58bb-4371-8f0a-54c555de8723",
+            "1b8368f1-466d-4fd6-b539-d291153aaefb"
         ],
         "store": [
             "dcfdf288-ba8a-4e43-b718-6d022801506a",
             "fa44e727-3560-43cb-90cb-a0a4e34cc91c",
-            "1c69a469-71b9-4a93-8399-2338e53c43c7"
+            "1c69a469-71b9-4a93-8399-2338e53c43c7",
+            "0994d425-86c7-4c62-8887-2ed38a2eca94",
+            "04eff064-7846-48e4-8113-3bff6a7b0816"
         ],
         "controller": [
             "b5637fd6-23dc-46ef-8f49-73dcb8df731a",
-            "00ebb048-ec78-4e81-8a60-74e2ff8f86c6"
+            "00ebb048-ec78-4e81-8a60-74e2ff8f86c6",
+            "c7f62182-32aa-4d83-9d88-afcabb048de8"
         ],
         "model": [
             "39c1316b-279a-4b12-a8dd-9df7c9d5e96c",
             "89b158e3-0e42-4f91-9666-8d982f193c14",
-            "9c259d64-c0af-42de-9f26-63f79fc41e9c"
+            "9c259d64-c0af-42de-9f26-63f79fc41e9c",
+            "8766856c-3455-4836-bbb6-a64371a7efed",
+            "3b8fcbe6-0e04-4214-9ce1-9914a23d3b5f"
         ],
         "resource": [
             "87e923c8-5356-478e-bfe1-425cc518e882",
             "cf6fcbf9-6552-4fe7-9f48-bd82de5dd2d5",
             "14474d06-669e-4b5d-852c-1be5a4a6c497",
             "8618e488-28ea-479b-ac41-6b816defe8b3",
-            "d4a7bf78-00bb-4657-b4e4-bc8cdd792fa0"
+            "d4a7bf78-00bb-4657-b4e4-bc8cdd792fa0",
+            "d9168bf7-fe61-40eb-8b23-de72dc80d866",
+            "5e0a9cc8-08a7-42a0-a15d-e7b6403b219c"
         ],
         "app": [
             "application"

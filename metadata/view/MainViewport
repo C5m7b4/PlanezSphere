@@ -383,7 +383,33 @@
                                                 "margin": "0 0 0 10",
                                                 "text": "Users"
                                             },
-                                            "designerId": "60ffd816-02ad-4e42-8af3-485fd41588d3"
+                                            "designerId": "60ffd816-02ad-4e42-8af3-485fd41588d3",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.menu.Menu",
+                                                    "reference": {
+                                                        "name": "menu",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "designerId": "bf9f64d9-ec70-4145-9b85-00568b8b3e4e",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.menu.Item",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "btnAddUser",
+                                                                "text": "Add user"
+                                                            },
+                                                            "designerId": "6fb5be31-7a23-4c51-a2cc-f85db83c37c6"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",

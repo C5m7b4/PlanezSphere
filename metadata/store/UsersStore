@@ -1,0 +1,39 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UsersStore",
+        "model": "UserModel",
+        "storeId": "UsersStore"
+    },
+    "designerId": "0994d425-86c7-4c62-8887-2ed38a2eca94",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "_data/Create_User.php"
+            },
+            "designerId": "2dba0d33-73ac-4c1b-861a-91d5bf499337",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "e6ed7a77-2ff2-440a-bdbb-1492bb82fb7b"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserLevelsStore",
+        "model": "UserLevelModel",
+        "storeId": "UserLevelsStore"
+    },
+    "designerId": "04eff064-7846-48e4-8113-3bff6a7b0816",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "_data/read_UserLevels.php"
+            },
+            "designerId": "4a8273f7-c13e-4285-8b6f-a27e20ec0190",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "c74a3180-9348-4eb6-ac62-f2ed0148fd9f"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserController",
+        "models": [
+            "UserModel",
+            "UserLevelModel"
+        ],
+        "stores": [
+            "UsersStore",
+            "UserLevelsStore"
+        ],
+        "views": [
+            "AddUserWindow"
+        ]
+    },
+    "designerId": "c7f62182-32aa-4d83-9d88-afcabb048de8",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCancelAddUser",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onCancelNewUser_click",
+                "implHandler": [
+                    "Ext.getCmp('AddUserWindow').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "8e3db5e7-6ce9-46eb-b940-27421e0bd099"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnSaveNewUser",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onSaveNewUser_click",
+                "implHandler": [
+                    "var username = Ext.ComponentQuery.query('#userUsername')[0].value;",
+                    "var firstname = Ext.ComponentQuery.query('#userFirstName')[0].value;",
+                    "var lastname = Ext.ComponentQuery.query('#userLastName')[0].value;",
+                    "var address = Ext.ComponentQuery.query('#userAddress')[0].value;",
+                    "var city = Ext.ComponentQuery.query('#userCity')[0].value;",
+                    "var state = Ext.ComponentQuery.query('#comboUserState')[0].value;",
+                    "var zip = Ext.ComponentQuery.query('#userZip')[0].value;",
+                    "var phone = Ext.ComponentQuery.query('#userPhone')[0].value;",
+                    "var email = Ext.ComponentQuery.query('#userEmail')[0].value;",
+                    "var active = Ext.ComponentQuery.query('#checkUserActive')[0].value;",
+                    "var password = Ext.ComponentQuery.query('#userPassword')[0].value;",
+                    "var confirm = Ext.ComponentQuery.query('#userConfirmPassword')[0].value;",
+                    "var userlevel = Ext.ComponentQuery.query('#userUserLevel')[0].value;",
+                    "",
+                    "if ( password != confirm){",
+                    "    Ext.Msg.alert('Passwords','Your Passwords do not match');",
+                    "    return;",
+                    "}",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    method:'POST',",
+                    "    url:'_data/create_User.php',",
+                    "    params:{",
+                    "        'username':username,",
+                    "        'firstname':firstname,",
+                    "        'lastname':lastname,",
+                    "        'address':address,",
+                    "        'city':city,",
+                    "        'state':state,",
+                    "        'zip':zip,",
+                    "        'phone':phone,",
+                    "        'email':email,",
+                    "        'active':active,",
+                    "        'password':password,",
+                    "        'userlevel':userlevel",
+                    "    },",
+                    "    success:function(response){",
+                    "        var parser = Ext.create('PlanezSphere.parse.c5Parse',{});",
+                    "        if ( parser.parseAjax(response) === true){",
+                    "            Ext.getCmp('AddUserWindow').close();",
+                    "        }",
+                    "    }",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "43bd6ebc-f8a4-465d-9a30-90ec52a28059"
+        }
+    ]
+}

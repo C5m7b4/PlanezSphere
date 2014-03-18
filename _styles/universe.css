@@ -1,36 +1,36 @@
 .saturn{
-	position:absolute;
-	top:200px;
-	left:600px;
-	-webkit-animation:saturnkeyframes 40s linear infinite;	
+	//position:absolute;
+	//top:200px;
+	//left:600px;
+	//-webkit-animation:saturnkeyframes 40s linear infinite;	
 	//-moz-animation:saturnkeyframes 40s linear infinite;	
 	//-o-animation:saturnkeyframes 40s linear infinite;	
 	//animation:saturnkeyframes 40s linear infinite;
 }
 
 .earth{
-	position:absolute;
-	top:200px;
-	left:200px;
-	-webkit-animation:earthkeyframes 40s linear infinite;
+	//position:absolute;
+	//top:200px;
+	//left:200px;
+	//-webkit-animation:earthkeyframes 40s linear infinite;
 	//-moz-animation:earthkeyframes 40s linear infinite;	
 	//-o-animation:earthkeyframes 40s linear infinite;	
 	//animation:earthkeyframes 40s linear infinite;
 }
 .jupiter{
-	position:absolute;
-	top:200px;
-	left:200px;
-	-webkit-animation:jupiterkeyframes 40s linear infinite;
+	//position:absolute;
+	//top:200px;
+	//left:200px;
+	//-webkit-animation:jupiterkeyframes 40s linear infinite;
 	//-moz-animation:jupiterkeyframes 40s linear infinite;	
 	//-o-animation:jupiterkeyframes 40s linear infinite;	
 	//animation:jupiterkeyframes 40s linear infinite;
 }
 .mars{
-	position:absolute;
-	top:200px;
-	left:200px;
-	-webkit-animation:marskeyframes 40s linear infinite;
+	//position:absolute;
+	//top:200px;
+	//left:200px;
+	//-webkit-animation:marskeyframes 40s linear infinite;
 	//-moz-animation:marskeyframes 40s linear infinite;	
 	//-o-animation:marskeyframes 40s linear infinite;	
 	//animation:marskeyframes 40s linear infinite;

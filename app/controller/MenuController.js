@@ -77,6 +77,15 @@ Ext.define('PlanezSphere.controller.MenuController', {
 
     },
 
+    onAddUser_click: function(button, e, eOpts) {
+        var cid = 'PlanezSphere.view.AddUserWindow';
+        var shortname = cid.substr(cid.lastIndexOf(".")+1,cid.length);
+        if ( Ext.get(shortname) === null){
+            var au = Ext.create('PlanezSphere.view.AddUserWindow',{});
+            au.show();
+        }
+    },
+
     init: function(application) {
         this.control({
             "#btnAddCompany": {
@@ -87,6 +96,9 @@ Ext.define('PlanezSphere.controller.MenuController', {
             },
             "#btnSubmitCompany": {
                 click: this.onSubmitCompany_click
+            },
+            "#btnAddUser": {
+                click: this.onAddUser_click
             }
         });
     }

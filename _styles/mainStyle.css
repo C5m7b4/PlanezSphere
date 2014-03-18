@@ -42,6 +42,13 @@
 	-webkit-box-shadow: 3px 3px 5px black;
 	margin:10px 0 0 0;
 }
+.lblWarning{
+	color:red;
+}
+
+.lblNoWarning{
+	color:#21e921;
+}
 
 
 

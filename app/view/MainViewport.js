@@ -189,7 +189,17 @@ Ext.define('PlanezSphere.view.MainViewport', {
                                                 {
                                                     xtype: 'button',
                                                     margin: '0 0 0 10',
-                                                    text: 'Users'
+                                                    text: 'Users',
+                                                    menu: {
+                                                        xtype: 'menu',
+                                                        items: [
+                                                            {
+                                                                xtype: 'menuitem',
+                                                                itemId: 'btnAddUser',
+                                                                text: 'Add user'
+                                                            }
+                                                        ]
+                                                    }
                                                 },
                                                 {
                                                     xtype: 'button',

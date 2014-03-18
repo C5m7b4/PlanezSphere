@@ -3,9 +3,9 @@
 	top:200px;
 	left:600px;
 	-webkit-animation:saturnkeyframes 40s linear infinite;	
-	-moz-animation:saturnkeyframes 40s linear infinite;	
-	-o-animation:saturnkeyframes 40s linear infinite;	
-	animation:saturnkeyframes 40s linear infinite;
+	//-moz-animation:saturnkeyframes 40s linear infinite;	
+	//-o-animation:saturnkeyframes 40s linear infinite;	
+	//animation:saturnkeyframes 40s linear infinite;
 }
 
 .earth{
@@ -13,326 +13,126 @@
 	top:200px;
 	left:200px;
 	-webkit-animation:earthkeyframes 40s linear infinite;
-	-moz-animation:earthkeyframes 40s linear infinite;	
-	-o-animation:earthkeyframes 40s linear infinite;	
-	animation:earthkeyframes 40s linear infinite;
+	//-moz-animation:earthkeyframes 40s linear infinite;	
+	//-o-animation:earthkeyframes 40s linear infinite;	
+	//animation:earthkeyframes 40s linear infinite;
 }
 .jupiter{
 	position:absolute;
 	top:200px;
 	left:200px;
 	-webkit-animation:jupiterkeyframes 40s linear infinite;
-	-moz-animation:jupiterkeyframes 40s linear infinite;	
-	-o-animation:jupiterkeyframes 40s linear infinite;	
-	animation:jupiterkeyframes 40s linear infinite;
+	//-moz-animation:jupiterkeyframes 40s linear infinite;	
+	//-o-animation:jupiterkeyframes 40s linear infinite;	
+	//animation:jupiterkeyframes 40s linear infinite;
 }
 .mars{
 	position:absolute;
 	top:200px;
 	left:200px;
 	-webkit-animation:marskeyframes 40s linear infinite;
-	-moz-animation:marskeyframes 40s linear infinite;	
-	-o-animation:marskeyframes 40s linear infinite;	
-	animation:marskeyframes 40s linear infinite;
+	//-moz-animation:marskeyframes 40s linear infinite;	
+	//-o-animation:marskeyframes 40s linear infinite;	
+	//animation:marskeyframes 40s linear infinite;
 }
 
-
+/* Saturn rotation keyframes */
 @-webkit-keyframes saturnkeyframes{
-	0%{left:800px;top:200px;}
-	5%{left:788px;top:123px;}
-	10%{left:752px;top:53px;}
-	15%{left:697px;top:-2px;}
-	20%{left:627px;top:-38px;}
-	25%{left:550px;top:-50px;}
-	30%{left:473px;top:-38px;}
-	35%{left:403px;top:-2px;}
-	40%{left:348px;top:53px;}
-	45%{left:312px;top:123px;}
-	50%{left:300px;top:200px;}
-	55%{left:312px;top:277px;}
-	60%{left:348px;top:347px;}
-	65%{left:403px;top:402px;}
-	70%{left:473px;top:438px;}
+	0%{left:750px;top:250px;}
+	5%{left:740px;top:188px;}
+	10%{left:712px;top:132px;}
+	15%{left:668px;top:88px;}
+	20%{left:612px;top:60px;}
+	25%{left:550px;top:50px;}
+	30%{left:488px;top:60px;}
+	35%{left:432px;top:88px;}
+	40%{left:388px;top:132px;}
+	45%{left:360px;top:188px;}
+	50%{left:350px;top:250px;}
+	55%{left:360px;top:312px;}
+	60%{left:388px;top:368px;}
+	65%{left:432px;top:412px;}
+	70%{left:488px;top:440px;}
 	75%{left:550px;top:450px;}
-	80%{left:627px;top:438px;}
-	85%{left:697px;top:402px;}
-	90%{left:752px;top:347px;}
-	95%{left:788px;top:277px;}
-	100%{left:800px;top:200px;}
+	80%{left:612px;top:440px;}
+	85%{left:668px;top:412px;}
+	90%{left:712px;top:368px;}
+	95%{left:740px;top:312px;}
+	100%{left:750px;top:250px;}
 }
-@-moz-keyframes saturnkeyframes{
-	0%{left:800px;top:200px;}
-	5%{left:788px;top:123px;}
-	10%{left:752px;top:53px;}
-	15%{left:697px;top:-2px;}
-	20%{left:627px;top:-38px;}
-	25%{left:550px;top:-50px;}
-	30%{left:473px;top:-38px;}
-	35%{left:403px;top:-2px;}
-	40%{left:348px;top:53px;}
-	45%{left:312px;top:123px;}
-	50%{left:300px;top:200px;}
-	55%{left:312px;top:277px;}
-	60%{left:348px;top:347px;}
-	65%{left:403px;top:402px;}
-	70%{left:473px;top:438px;}
-	75%{left:550px;top:450px;}
-	80%{left:627px;top:438px;}
-	85%{left:697px;top:402px;}
-	90%{left:752px;top:347px;}
-	95%{left:788px;top:277px;}
-	100%{left:800px;top:200px;}
-}
-@-o-keyframes saturnkeyframes{
-	0%{left:800px;top:200px;}
-	5%{left:788px;top:123px;}
-	10%{left:752px;top:53px;}
-	15%{left:697px;top:-2px;}
-	20%{left:627px;top:-38px;}
-	25%{left:550px;top:-50px;}
-	30%{left:473px;top:-38px;}
-	35%{left:403px;top:-2px;}
-	40%{left:348px;top:53px;}
-	45%{left:312px;top:123px;}
-	50%{left:300px;top:200px;}
-	55%{left:312px;top:277px;}
-	60%{left:348px;top:347px;}
-	65%{left:403px;top:402px;}
-	70%{left:473px;top:438px;}
-	75%{left:550px;top:450px;}
-	80%{left:627px;top:438px;}
-	85%{left:697px;top:402px;}
-	90%{left:752px;top:347px;}
-	95%{left:788px;top:277px;}
-	100%{left:800px;top:200px;}
-}
-@keyframes saturnkeyframes{
-	0%{left:800px;top:200px;}
-	5%{left:788px;top:123px;}
-	10%{left:752px;top:53px;}
-	15%{left:697px;top:-2px;}
-	20%{left:627px;top:-38px;}
-	25%{left:550px;top:-50px;}
-	30%{left:473px;top:-38px;}
-	35%{left:403px;top:-2px;}
-	40%{left:348px;top:53px;}
-	45%{left:312px;top:123px;}
-	50%{left:300px;top:200px;}
-	55%{left:312px;top:277px;}
-	60%{left:348px;top:347px;}
-	65%{left:403px;top:402px;}
-	70%{left:473px;top:438px;}
-	75%{left:550px;top:450px;}
-	80%{left:627px;top:438px;}
-	85%{left:697px;top:402px;}
-	90%{left:752px;top:347px;}
-	95%{left:788px;top:277px;}
-	100%{left:800px;top:200px;}
-}
+
+
+/* earth rotation keyframes */
 @-webkit-keyframes earthkeyframes{
-	0%{left:312px;top:277px;}
-	5%{left:348px;top:347px;}
-	10%{left:403px;top:402px;}
-	15%{left:473px;top:438px;}
-	20%{left:550px;top:450px;}
-	25%{left:627px;top:438px;}
-	30%{left:697px;top:402px;}
-	35%{left:752px;top:347px;}
-	40%{left:788px;top:277px;}
-	45%{left:800px;top:200px;}
-	50%{left:800px;top:200px;}
-	55%{left:788px;top:123px;}
-	60%{left:752px;top:53px;}
-	65%{left:697px;top:-2px;}
-	70%{left:627px;top:-38px;}
-	75%{left:550px;top:-50px;}
-	80%{left:473px;top:-38px;}
-	85%{left:403px;top:-2px;}
-	90%{left:348px;top:53px;}
-	95%{left:312px;top:123px;}
-	100%{left:300px;top:200px;}
-}
-@-moz-keyframes earthkeyframes{
-	0%{left:312px;top:277px;}
-	5%{left:348px;top:347px;}
-	10%{left:403px;top:402px;}
-	15%{left:473px;top:438px;}
-	20%{left:550px;top:450px;}
-	25%{left:627px;top:438px;}
-	30%{left:697px;top:402px;}
-	35%{left:752px;top:347px;}
-	40%{left:788px;top:277px;}
-	45%{left:800px;top:200px;}
-	50%{left:800px;top:200px;}
-	55%{left:788px;top:123px;}
-	60%{left:752px;top:53px;}
-	65%{left:697px;top:-2px;}
-	70%{left:627px;top:-38px;}
-	75%{left:550px;top:-50px;}
-	80%{left:473px;top:-38px;}
-	85%{left:403px;top:-2px;}
-	90%{left:348px;top:53px;}
-	95%{left:312px;top:123px;}
-	100%{left:300px;top:200px;}
-}
-@-o-keyframes earthkeyframes{
-	0%{left:312px;top:277px;}
-	5%{left:348px;top:347px;}
-	10%{left:403px;top:402px;}
-	15%{left:473px;top:438px;}
-	20%{left:550px;top:450px;}
-	25%{left:627px;top:438px;}
-	30%{left:697px;top:402px;}
-	35%{left:752px;top:347px;}
-	40%{left:788px;top:277px;}
-	45%{left:800px;top:200px;}
-	50%{left:800px;top:200px;}
-	55%{left:788px;top:123px;}
-	60%{left:752px;top:53px;}
-	65%{left:697px;top:-2px;}
-	70%{left:627px;top:-38px;}
-	75%{left:550px;top:-50px;}
-	80%{left:473px;top:-38px;}
-	85%{left:403px;top:-2px;}
-	90%{left:348px;top:53px;}
-	95%{left:312px;top:123px;}
-	100%{left:300px;top:200px;}
-}
-@keyframes earthkeyframes{
-	0%{left:312px;top:277px;}
-	5%{left:348px;top:347px;}
-	10%{left:403px;top:402px;}
-	15%{left:473px;top:438px;}
-	20%{left:550px;top:450px;}
-	25%{left:627px;top:438px;}
-	30%{left:697px;top:402px;}
-	35%{left:752px;top:347px;}
-	40%{left:788px;top:277px;}
-	45%{left:800px;top:200px;}
-	50%{left:800px;top:200px;}
-	55%{left:788px;top:123px;}
-	60%{left:752px;top:53px;}
-	65%{left:697px;top:-2px;}
-	70%{left:627px;top:-38px;}
-	75%{left:550px;top:-50px;}
-	80%{left:473px;top:-38px;}
-	85%{left:403px;top:-2px;}
-	90%{left:348px;top:53px;}
-	95%{left:312px;top:123px;}
-	100%{left:300px;top:200px;}
-}
-@-webkit-keyframes jupiterkeyframes{
-	0%{left:627px;top:438px;}
-	5%{left:697px;top:402px;}
-	10%{left:752px;top:347px;}
-	15%{left:788px;top:277px;}
-	20%{left:800px;top:200px;}
-	25%{left:800px;top:200px;}
-	30%{left:788px;top:123px;}
-	35%{left:752px;top:53px;}
-	40%{left:697px;top:-2px;}
-	45%{left:627px;top:-38px;}
-	50%{left:550px;top:-50px;}
-	55%{left:473px;top:-38px;}
-	60%{left:403px;top:-2px;}
-	65%{left:348px;top:53px;}
-	70%{left:312px;top:123px;}
-	75%{left:300px;top:200px;}
-	80%{left:312px;top:277px;}
-	85%{left:348px;top:347px;}
-	90%{left:403px;top:402px;}
-	95%{left:473px;top:438px;}
-	100%{left:550px;top:450px;}
-}
-@-moz-keyframes jupiterkeyframes{
-	0%{left:627px;top:438px;}
-	5%{left:697px;top:402px;}
-	10%{left:752px;top:347px;}
-	15%{left:788px;top:277px;}
-	20%{left:800px;top:200px;}
-	25%{left:800px;top:200px;}
-	30%{left:788px;top:123px;}
-	35%{left:752px;top:53px;}
-	40%{left:697px;top:-2px;}
-	45%{left:627px;top:-38px;}
-	50%{left:550px;top:-50px;}
-	55%{left:473px;top:-38px;}
-	60%{left:403px;top:-2px;}
-	65%{left:348px;top:53px;}
-	70%{left:312px;top:123px;}
-	75%{left:300px;top:200px;}
-	80%{left:312px;top:277px;}
-	85%{left:348px;top:347px;}
-	90%{left:403px;top:402px;}
-	95%{left:473px;top:438px;}
-	100%{left:550px;top:450px;}
-}
-@-o-keyframes jupiterkeyframes{
-	0%{left:627px;top:438px;}
-	5%{left:697px;top:402px;}
-	10%{left:752px;top:347px;}
-	15%{left:788px;top:277px;}
-	20%{left:800px;top:200px;}
-	25%{left:800px;top:200px;}
-	30%{left:788px;top:123px;}
-	35%{left:752px;top:53px;}
-	40%{left:697px;top:-2px;}
-	45%{left:627px;top:-38px;}
-	50%{left:550px;top:-50px;}
-	55%{left:473px;top:-38px;}
-	60%{left:403px;top:-2px;}
-	65%{left:348px;top:53px;}
-	70%{left:312px;top:123px;}
-	75%{left:300px;top:200px;}
-	80%{left:312px;top:277px;}
-	85%{left:348px;top:347px;}
-	90%{left:403px;top:402px;}
-	95%{left:473px;top:438px;}
-	100%{left:550px;top:450px;}
-}
-@keyframes jupiterkeyframes{
-	0%{left:627px;top:438px;}
-	5%{left:697px;top:402px;}
-	10%{left:752px;top:347px;}
-	15%{left:788px;top:277px;}
-	20%{left:800px;top:200px;}
-	25%{left:800px;top:200px;}
-	30%{left:788px;top:123px;}
-	35%{left:752px;top:53px;}
-	40%{left:697px;top:-2px;}
-	45%{left:627px;top:-38px;}
-	50%{left:550px;top:-50px;}
-	55%{left:473px;top:-38px;}
-	60%{left:403px;top:-2px;}
-	65%{left:348px;top:53px;}
-	70%{left:312px;top:123px;}
-	75%{left:300px;top:200px;}
-	80%{left:312px;top:277px;}
-	85%{left:348px;top:347px;}
-	90%{left:403px;top:402px;}
-	95%{left:473px;top:438px;}
-	100%{left:550px;top:450px;}
-}
-@-webkit-keyframes marskeyframes{
-	0%{left:473px;top:-38px;}
-	5%{left:403px;top:-2px;}
-	10%{left:348px;top:53px;}
-	15%{left:312px;top:123px;}
-	20%{left:300px;top:200px;}
-	25%{left:312px;top:277px;}
-	30%{left:348px;top:347px;}
-	35%{left:403px;top:402px;}
-	40%{left:473px;top:438px;}
+	0%{left:488px;top:60px;}
+	5%{left:432px;top:88px;}
+	10%{left:388px;top:132px;}
+	15%{left:360px;top:188px;}
+	20%{left:350px;top:250px;}
+	25%{left:360px;top:312px;}
+	30%{left:388px;top:368px;}
+	35%{left:432px;top:412px;}
+	40%{left:488px;top:440px;}
 	45%{left:550px;top:450px;}
-	50%{left:627px;top:438px;}
-	55%{left:697px;top:402px;}
-	60%{left:752px;top:347px;}
-	65%{left:788px;top:277px;}
-	70%{left:800px;top:200px;}
-	75%{left:800px;top:200px;}
-	80%{left:788px;top:123px;}
-	85%{left:752px;top:53px;}
-	90%{left:697px;top:-2px;}
-	95%{left:627px;top:-38px;}
-	100%{left:550px;top:-50px;}
+	50%{left:612px;top:440px;}
+	55%{left:668px;top:412px;}
+	60%{left:712px;top:368px;}
+	65%{left:740px;top:312px;}
+	70%{left:750px;top:250px;}
+	75%{left:750px;top:250px;}
+	80%{left:740px;top:188px;}
+	85%{left:712px;top:132px;}
+	90%{left:668px;top:88px;}
+	95%{left:612px;top:60px;}
+	100%{left:550px;top:50px;}
+}
+
+/* jupiter rotation keyframes */
+@-webkit-keyframes jupiterkeyframes{
+	0%{left:388px;top:368px;}
+	5%{left:432px;top:412px;}
+	10%{left:488px;top:440px;}
+	15%{left:550px;top:450px;}
+	20%{left:612px;top:440px;}
+	25%{left:668px;top:412px;}
+	30%{left:712px;top:368px;}
+	35%{left:740px;top:312px;}
+	40%{left:750px;top:250px;}
+	45%{left:750px;top:250px;}
+	50%{left:740px;top:188px;}
+	55%{left:712px;top:132px;}
+	60%{left:668px;top:88px;}
+	65%{left:612px;top:60px;}
+	70%{left:550px;top:50px;}
+	75%{left:488px;top:60px;}
+	80%{left:432px;top:88px;}
+	85%{left:388px;top:132px;}
+	90%{left:360px;top:188px;}
+	95%{left:350px;top:250px;}
+	100%{left:360px;top:312px;}
+}
+
+/* mars rotation keyframes */
+@-webkit-keyframes marskeyframes{
+	0%{left:712px;top:368px;}
+	5%{left:740px;top:312px;}
+	10%{left:750px;top:250px;}
+	15%{left:750px;top:250px;}
+	20%{left:740px;top:188px;}
+	25%{left:712px;top:132px;}
+	30%{left:668px;top:88px;}
+	35%{left:612px;top:60px;}
+	40%{left:550px;top:50px;}
+	45%{left:488px;top:60px;}
+	50%{left:432px;top:88px;}
+	55%{left:388px;top:132px;}
+	60%{left:360px;top:188px;}
+	65%{left:350px;top:250px;}
+	70%{left:360px;top:312px;}
+	75%{left:388px;top:368px;}
+	80%{left:432px;top:412px;}
+	85%{left:488px;top:440px;}
+	90%{left:550px;top:450px;}
+	95%{left:612px;top:440px;}
+	100%{left:668px;top:412px;}
 }

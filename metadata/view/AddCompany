@@ -1,0 +1,295 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "bodyPadding": 15,
+        "container|align": "stretch",
+        "designer|userClassName": "AddCompany",
+        "height": 336,
+        "layout": "vbox",
+        "title": "Add Company",
+        "width": 565
+    },
+    "designerId": "974e7282-58bb-4371-8f0a-54c555de8723",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Company Id",
+                "layout|flex": 1,
+                "maxHeight": 30
+            },
+            "designerId": "0d84b2e5-3953-4c22-b647-620b79d97f30",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "maxHeight": 27,
+                        "text": "ID:"
+                    },
+                    "designerId": "69c33f0c-514f-4cce-a70f-0103deb65d19"
+                },
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "lblCompanyId",
+                        "maxHeight": 27,
+                        "text": null
+                    },
+                    "designerId": "dde31779-46ab-4b41-b81a-1655df0a4ecb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Company Name",
+                "itemId": "txtCompanyName",
+                "labelAlign": "right",
+                "labelWidth": 125,
+                "layout|flex": 1,
+                "maxHeight": 27
+            },
+            "designerId": "236c6a5a-e42c-4e75-8978-83ecaa42a5c9"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Address",
+                "itemId": "txtCompanyAddress",
+                "labelAlign": "right",
+                "labelWidth": 125,
+                "layout|flex": 1,
+                "maxHeight": 27
+            },
+            "designerId": "4e628fa6-d5ee-4c7e-a9c0-b22a3857e95c"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|displayName": "CityState",
+                "layout": "hbox",
+                "layout|flex": 1,
+                "maxHeight": 30
+            },
+            "designerId": "3f4c26cd-4480-424b-9d79-dc04b391ce11",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "City",
+                        "itemId": "txtCompanyCity",
+                        "labelAlign": "right",
+                        "labelWidth": 125,
+                        "layout|flex": 1,
+                        "maxHeight": 27,
+                        "maxWidth": 350
+                    },
+                    "designerId": "d248b3b6-6c38-4e38-a297-12e2522be3fb"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "State",
+                        "itemId": "comboCompanyState",
+                        "labelAlign": "right",
+                        "labelWidth": 75,
+                        "layout|flex": 1,
+                        "maxHeight": 27,
+                        "maxWidth": 150
+                    },
+                    "designerId": "778bf11b-8efd-43fe-abb0-2b3bcae0e183"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|displayName": "ZipContact",
+                "layout": "hbox",
+                "layout|flex": 1,
+                "layout|margins": "5 0 0 0",
+                "maxHeight": 35
+            },
+            "designerId": "9be02548-24f4-403b-b41d-d42c82e4ba70",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Zip",
+                        "itemId": "txtCompanyZip",
+                        "labelAlign": "right",
+                        "labelWidth": 125,
+                        "layout|flex": 1,
+                        "maxHeight": 27,
+                        "maxWidth": 225,
+                        "minWidth": null
+                    },
+                    "designerId": "116284e8-45b8-40fa-a4b2-472b8cfe4b55"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Contact",
+                        "itemId": "comboStoreContact",
+                        "labelAlign": "right",
+                        "layout|flex": 1,
+                        "maxHeight": 27
+                    },
+                    "designerId": "de24de91-2c99-455c-97fa-16aefed60d4d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Phone",
+                "inputType": "tel",
+                "itemId": "txtCompanyPhone",
+                "labelAlign": "right",
+                "labelWidth": 125,
+                "layout|flex": 1,
+                "maxHeight": 27,
+                "maxWidth": 300
+            },
+            "designerId": "818fa326-cf51-46a0-9820-eb7d1b2bb458"
+        },
+        {
+            "type": "Ext.form.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "boxLabel": null,
+                "fieldLabel": "Active",
+                "itemId": "checkCompanyActive",
+                "labelAlign": "right",
+                "labelWidth": 125,
+                "layout|flex": 1,
+                "maxHeight": 27
+            },
+            "designerId": "c7523595-06f5-4345-945c-74961dd513d8"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "layout": "hbox",
+                "layout|flex": 1,
+                "maxHeight": 35
+            },
+            "designerId": "b31ebb21-a79e-43e9-9bb0-0c4803c0b33d",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnCancelAddCompany",
+                        "layout|flex": 1,
+                        "layout|margins": "0 10 0 10",
+                        "maxHeight": 27,
+                        "maxWidth": 100,
+                        "text": "Cancel"
+                    },
+                    "designerId": "ba9188b8-f1f9-4fe7-aad7-1fbc3d4bd98d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnSubmitCompany",
+                        "layout|flex": 1,
+                        "layout|margins": "0 10 0 10",
+                        "maxHeight": 27,
+                        "maxWidth": 100,
+                        "text": "Submit"
+                    },
+                    "designerId": "c4904336-255f-4283-9f67-09c8af5c292a"
+                }
+            ]
+        }
+    ]
+}

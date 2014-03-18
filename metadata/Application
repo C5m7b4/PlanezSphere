@@ -18,7 +18,8 @@
             "Ext.layout.container.Card"
         ],
         "views": [
-            "MainViewport"
+            "MainViewport",
+            "AddCompany"
         ]
     },
     "designerId": "application"

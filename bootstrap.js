@@ -8,6 +8,23 @@ Ext.Loader.addClassPathMappings({
   "Ext": "ext/src",
   "Ext.Msg": "ext/src/window/MessageBox.js",
   "Ext.rtl.EventObjectImpl": "ext/src/rtl/EventObject.js",
+  "Ext.ux.form.PhoneField": "_scripts/phonefield.js",
+  "ExtThemeNeptune.Component": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.container.ButtonGroup": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.form.field.HtmlEditor": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.grid.RowEditor": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.grid.column.RowNumberer": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.layout.component.Dock": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.menu.Menu": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.menu.Separator": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.panel.Panel": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.panel.Table": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.panel.Tool": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.picker.Month": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.resizer.Splitter": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.tab.Tab": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.toolbar.Paging": "ext/ext-theme-neptune.js",
+  "ExtThemeNeptune.toolbar.Toolbar": "ext/ext-theme-neptune.js",
   "PlanezSphere": "app"
 });
 Ext.ClassManager.addNameAlternateMappings({
@@ -793,6 +810,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.form.MultiSelect": [
     "Ext.ux.Multiselect"
   ],
+  "Ext.ux.form.PhoneField": [
+    "Ext.form.PhoneField",
+    "Ext.form.Phone"
+  ],
   "Ext.ux.form.SearchField": [],
   "Ext.ux.grid.FiltersFeature": [],
   "Ext.ux.grid.TransformGrid": [],
@@ -827,12 +848,40 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.window.Window": [
     "Ext.Window"
   ],
+  "ExtThemeNeptune.Component": [],
+  "ExtThemeNeptune.container.ButtonGroup": [],
+  "ExtThemeNeptune.form.field.HtmlEditor": [],
+  "ExtThemeNeptune.grid.RowEditor": [],
+  "ExtThemeNeptune.grid.column.RowNumberer": [],
+  "ExtThemeNeptune.layout.component.Dock": [],
+  "ExtThemeNeptune.menu.Menu": [],
+  "ExtThemeNeptune.menu.Separator": [],
+  "ExtThemeNeptune.panel.Panel": [],
+  "ExtThemeNeptune.panel.Table": [],
+  "ExtThemeNeptune.panel.Tool": [],
+  "ExtThemeNeptune.picker.Month": [],
+  "ExtThemeNeptune.resizer.Splitter": [],
+  "ExtThemeNeptune.tab.Tab": [],
+  "ExtThemeNeptune.toolbar.Paging": [],
+  "ExtThemeNeptune.toolbar.Toolbar": [],
   "PlanezSphere.Application": [],
   "PlanezSphere.controller.LoginController": [],
   "PlanezSphere.controller.Main": [],
+  "PlanezSphere.controller.MenuController": [],
+  "PlanezSphere.controller.UserController": [],
+  "PlanezSphere.model.ContactModel": [],
   "PlanezSphere.model.SecurityQuestionModel": [],
+  "PlanezSphere.model.StatesModel": [],
+  "PlanezSphere.model.UserLevelModel": [],
+  "PlanezSphere.model.UserModel": [],
   "PlanezSphere.parse.c5Parse": [],
+  "PlanezSphere.store.ContactsStore": [],
   "PlanezSphere.store.SecurityQuestionStore": [],
+  "PlanezSphere.store.StatesStore": [],
+  "PlanezSphere.store.UserLevelsStore": [],
+  "PlanezSphere.store.UsersStore": [],
+  "PlanezSphere.view.AddCompany": [],
+  "PlanezSphere.view.AddUserWindow": [],
   "PlanezSphere.view.ForgotPassword": [],
   "PlanezSphere.view.Main": [],
   "PlanezSphere.view.MainViewport": [],
@@ -1768,6 +1817,9 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.multiselect",
     "widget.multiselectfield"
   ],
+  "Ext.ux.form.PhoneField": [
+    "widget.phonefield"
+  ],
   "Ext.ux.form.SearchField": [
     "widget.searchfield"
   ],
@@ -1826,14 +1878,42 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.window.Window": [
     "widget.window"
   ],
+  "ExtThemeNeptune.Component": [],
+  "ExtThemeNeptune.container.ButtonGroup": [],
+  "ExtThemeNeptune.form.field.HtmlEditor": [],
+  "ExtThemeNeptune.grid.RowEditor": [],
+  "ExtThemeNeptune.grid.column.RowNumberer": [],
+  "ExtThemeNeptune.layout.component.Dock": [],
+  "ExtThemeNeptune.menu.Menu": [],
+  "ExtThemeNeptune.menu.Separator": [],
+  "ExtThemeNeptune.panel.Panel": [],
+  "ExtThemeNeptune.panel.Table": [],
+  "ExtThemeNeptune.panel.Tool": [],
+  "ExtThemeNeptune.picker.Month": [],
+  "ExtThemeNeptune.resizer.Splitter": [],
+  "ExtThemeNeptune.tab.Tab": [],
+  "ExtThemeNeptune.toolbar.Paging": [],
+  "ExtThemeNeptune.toolbar.Toolbar": [],
   "PlanezSphere.Application": [],
   "PlanezSphere.controller.LoginController": [],
   "PlanezSphere.controller.Main": [],
+  "PlanezSphere.controller.MenuController": [],
+  "PlanezSphere.controller.UserController": [],
+  "PlanezSphere.model.ContactModel": [],
   "PlanezSphere.model.SecurityQuestionModel": [],
+  "PlanezSphere.model.StatesModel": [],
+  "PlanezSphere.model.UserLevelModel": [],
+  "PlanezSphere.model.UserModel": [],
   "PlanezSphere.parse.c5Parse": [
     "widget.c5Parse"
   ],
+  "PlanezSphere.store.ContactsStore": [],
   "PlanezSphere.store.SecurityQuestionStore": [],
+  "PlanezSphere.store.StatesStore": [],
+  "PlanezSphere.store.UserLevelsStore": [],
+  "PlanezSphere.store.UsersStore": [],
+  "PlanezSphere.view.AddCompany": [],
+  "PlanezSphere.view.AddUserWindow": [],
   "PlanezSphere.view.ForgotPassword": [
     "widget.forgotPassword"
   ],
@@ -1848,11 +1928,26 @@ Ext.ClassManager.addNameAliasMappings({
   "PlanezSphere.view.SecurityQuestion": [],
   "PlanezSphere.view.Viewport": []
 });
-Ext.setVersion("ext-theme-access", "4.2.1");
-Ext.setVersion("ext-theme-access-14474d06-669e-4b5d-852c-1be5a4a6c497", "1.0.0");
 Ext.setVersion("ext-theme-base", "4.2.1");
-Ext.setVersion("ext-theme-classic", "4.2.1");
+Ext.setVersion("ext-theme-neptune", "4.2.1");
+Ext.setVersion("ext-theme-neptune-a071efbf-6e06-496f-ab5c-7574ba99f7df", "1.0.0");
 Ext.setVersion("ext-theme-neutral", "4.2.1");
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/Component.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Panel.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/toolbar/Toolbar.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/layout/component/Dock.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/container/ButtonGroup.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/toolbar/Paging.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/picker/Month.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/form/field/HtmlEditor.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Table.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/grid/RowEditor.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/grid/column/RowNumberer.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/resizer/Splitter.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/menu/Menu.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/menu/Separator.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Tool.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/tab/Tab.js");;
 /**
  * Sencha Blink - Development
  * @author Jacky Nguyen <jacky@sencha.com>

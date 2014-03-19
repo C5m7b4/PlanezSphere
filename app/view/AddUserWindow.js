@@ -71,12 +71,9 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                             xtype: 'textfield',
                             flex: 1,
                             itemId: 'userUsername',
-                            maxWidth: 300,
-                            width: 300,
+                            minWidth: 200,
                             fieldLabel: 'Username',
                             labelAlign: 'right',
-                            allowBlank: false,
-                            minLength: 6,
                             listeners: {
                                 change: {
                                     fn: me.onUserUsernameChange,
@@ -87,11 +84,17 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                         {
                             xtype: 'label',
                             flex: 1,
-                            margins: '0 10 0 20',
+                            margins: '0 0 0 5',
+                            itemId: 'lblUsernameStatus',
+                            maxWidth: 30
+                        },
+                        {
+                            xtype: 'label',
+                            flex: 1,
+                            margins: '0 5 0 5',
                             cls: 'lblWarning',
-                            hidden: true,
                             itemId: 'userUsernameAccepted',
-                            maxWidth: 225
+                            maxWidth: 200
                         }
                     ]
                 },
@@ -102,7 +105,6 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                     width: 350,
                     fieldLabel: 'Email',
                     labelAlign: 'right',
-                    allowBlank: false,
                     vtype: 'email'
                 },
                 {
@@ -194,7 +196,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                     },
                     items: [
                         {
-                            xtype: 'textfield',
+                            xtype: 'passwordmeter',
                             flex: 1,
                             itemId: 'userPassword',
                             fieldLabel: 'Password',
@@ -278,6 +280,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
         btn.setDisabled(true);
         var username = Ext.ComponentQuery.query('#userUsername')[0].value;
         var label = Ext.ComponentQuery.query('#userUsernameAccepted')[0];
+        var labelIcon = Ext.ComponentQuery.query('#lblUsernameStatus')[0];
 
         //check for length first
         if ( username.length < 6){
@@ -286,6 +289,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
             label.addCls('lblWarning');
             label.setText('must be at least 6 chars');
             label.setVisible(true);
+            labelIcon.addCls('lblWarningLabel');
             return;
         }
 
@@ -306,9 +310,10 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                     //this username is not taken
                     label.removeCls('lblWarning');
                     label.addCls('lblNoWarning');
-                    label.setText('     Username is good!');
+                    label.setText('Username is good!');
                     btn.setDisabled(false);
                     label.setVisible(true);
+                    labelIcon.addCls('lblNoWarningLabel');
                 } else {
                     //this username is taken
                     btn.setDisabled(true);
@@ -316,6 +321,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                     label.addCls('lblWarning');
                     label.setText('Username is already Taken');
                     label.setVisible(true);
+                    labelIcon.addCls('lblWarningLabel');
                 }
 
             }

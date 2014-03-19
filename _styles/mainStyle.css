@@ -48,9 +48,27 @@
 
 .lblNoWarning{
 	color:#21e921;
+}
+.lblNoWarningLabel{
 	background-image:url(../_images/GreenExcl.png);
 	background-repeat:no-repeat;
 }
+.lblWarningLabel{
+	background-image:url(../_images/RedX.png);
+	background-repeat:no-repeat;
+}
 
-
+.strengthmeter{
+	background-image:url(../_images/meter.gif);
+	background-repeat:no-repeat;
+	background-size:100%;
+	width:100%;
+	float:right;
+}
+.scorebar{
+	background-color:white;
+	float:right;
+	line-height:6px;
+	width:100%;
+}
 

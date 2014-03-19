@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "js",
-        "id": "phonefield",
+        "id": "phonefield.js",
         "url": "_scripts/phonefield.js"
     },
     "designerId": "d9168bf7-fe61-40eb-8b23-de72dc80d866"

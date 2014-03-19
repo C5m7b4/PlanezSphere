@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js4",
+        "id": "passwordStrength",
+        "url": "_scripts/passwordStrength.js"
+    },
+    "designerId": "cf535d94-dd7c-46ee-abe9-069fde92f8a5"
+}

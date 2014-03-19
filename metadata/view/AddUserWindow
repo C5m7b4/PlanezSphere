@@ -73,7 +73,8 @@
                 "container|align": "stretch",
                 "designer|displayName": "username",
                 "layout": "hbox",
-                "margin": "0 0 10 0"
+                "margin": "0 0 10 0",
+                "width": null
             },
             "designerId": "4a1d6e29-5db1-497c-b936-1d93586ffe18",
             "cn": [
@@ -85,14 +86,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "allowBlank": false,
                         "fieldLabel": "Username",
                         "itemId": "userUsername",
                         "labelAlign": "right",
                         "layout|flex": 1,
-                        "maxWidth": 300,
-                        "minLength": 6,
-                        "width": 300
+                        "maxWidth": null,
+                        "minLength": null,
+                        "minWidth": 200,
+                        "width": null
                     },
                     "designerId": "d5b7bfeb-d934-487c-8a7d-95ef305fbbfc",
                     "cn": [
@@ -110,6 +111,7 @@
                                     "btn.setDisabled(true);",
                                     "var username = Ext.ComponentQuery.query('#userUsername')[0].value;",
                                     "var label = Ext.ComponentQuery.query('#userUsernameAccepted')[0];",
+                                    "var labelIcon = Ext.ComponentQuery.query('#lblUsernameStatus')[0];",
                                     "",
                                     "//check for length first",
                                     "if ( username.length < 6){",
@@ -118,6 +120,7 @@
                                     "    label.addCls('lblWarning');",
                                     "    label.setText('must be at least 6 chars');",
                                     "    label.setVisible(true);",
+                                    "    labelIcon.addCls('lblWarningLabel');",
                                     "    return;",
                                     "}",
                                     "",
@@ -138,9 +141,10 @@
                                     "            //this username is not taken",
                                     "            label.removeCls('lblWarning');",
                                     "            label.addCls('lblNoWarning');",
-                                    "            label.setText('     Username is good!');",
+                                    "            label.setText('Username is good!');",
                                     "            btn.setDisabled(false);",
                                     "            label.setVisible(true);",
+                                    "            labelIcon.addCls('lblNoWarningLabel');",
                                     "        } else {",
                                     "            //this username is taken",
                                     "            btn.setDisabled(true);",
@@ -148,6 +152,7 @@
                                     "            label.addCls('lblWarning');",
                                     "            label.setText('Username is already Taken');",
                                     "            label.setVisible(true);",
+                                    "            labelIcon.addCls('lblWarningLabel');",
                                     "        }",
                                     "",
                                     "    }",
@@ -168,12 +173,27 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "lblUsernameStatus",
+                        "layout|flex": 1,
+                        "layout|margins": "0 0 0 5",
+                        "maxWidth": 30,
+                        "text": null
+                    },
+                    "designerId": "01b8326f-88c6-4922-a215-88805065b595"
+                },
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "cls": "lblWarning",
-                        "hidden": true,
                         "itemId": "userUsernameAccepted",
                         "layout|flex": 1,
-                        "layout|margins": "0 10 0 20",
-                        "maxWidth": 225,
+                        "layout|margins": "0 5 0 5",
+                        "maxWidth": 200,
                         "text": null
                     },
                     "designerId": "6bffe8bf-b301-4f61-ad14-cda783483ee7"
@@ -188,7 +208,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "allowBlank": false,
                 "fieldLabel": "Email",
                 "itemId": "userEmail",
                 "labelAlign": "right",
@@ -398,6 +417,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|createAlias": "passwordmeter",
                         "fieldLabel": "Password",
                         "inputType": "password",
                         "itemId": "userPassword",

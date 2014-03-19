@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js2",
+        "id": "phonefield",
+        "url": "http://developerextensions.com/components/com_extensiondemo/views/extensiondemo/tmpl/ext3/ux/phoneField/phoneField_Ext4.js"
+    },
+    "designerId": "94b35ab3-6089-4705-9a5b-c2e9afc4fd2b"
+}

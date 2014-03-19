@@ -28,7 +28,8 @@ Ext.application({
         'Ext.layout.container.Card'
     ],
     views: [
-        'MainViewport'
+        'MainViewport',
+        'MyWindow'
     ],
     controllers: [
         'LoginController',

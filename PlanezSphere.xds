@@ -21,9 +21,10 @@
         "lineEnding": "LF",
         "genTimestamps": false,
         "cacheBust": false,
-        "buildShouldOverwriteIndex": false,
+        "buildShouldOverwriteIndex": true,
         "generateArchitectVersion": true,
-        "displayfield-ExtBox1-1276-inputEl": "Not Installed"
+        "displayfield-ExtBox1-1276-inputEl": "Not Installed",
+        "displayfield-ExtBox1-1279-inputEl": "Not Installed"
     },
     "xdsVersion": "3.0.3",
     "xdsBuild": 1382,
@@ -37,7 +38,8 @@
             "51bc3ba8-575a-446c-993d-7b5d27bc2b24",
             "1348c6de-efa1-400d-96fa-166b9b58f1b3",
             "974e7282-58bb-4371-8f0a-54c555de8723",
-            "1b8368f1-466d-4fd6-b539-d291153aaefb"
+            "1b8368f1-466d-4fd6-b539-d291153aaefb",
+            "5a266ffc-6fbc-49b9-a4f0-bbbd7332a2e7"
         ],
         "store": [
             "dcfdf288-ba8a-4e43-b718-6d022801506a",
@@ -64,8 +66,12 @@
             "14474d06-669e-4b5d-852c-1be5a4a6c497",
             "8618e488-28ea-479b-ac41-6b816defe8b3",
             "d4a7bf78-00bb-4657-b4e4-bc8cdd792fa0",
+            "1e0946e9-a592-45f8-974c-34ce1c37a36b",
             "d9168bf7-fe61-40eb-8b23-de72dc80d866",
-            "5e0a9cc8-08a7-42a0-a15d-e7b6403b219c"
+            "5e0a9cc8-08a7-42a0-a15d-e7b6403b219c",
+            "94b35ab3-6089-4705-9a5b-c2e9afc4fd2b",
+            "cf535d94-dd7c-46ee-abe9-069fde92f8a5",
+            "a071efbf-6e06-496f-ab5c-7574ba99f7df"
         ],
         "app": [
             "application"

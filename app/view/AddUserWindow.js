@@ -306,7 +306,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                     //this username is not taken
                     label.removeCls('lblWarning');
                     label.addCls('lblNoWarning');
-                    label.setText('Username is good!');
+                    label.setText('     Username is good!');
                     btn.setDisabled(false);
                     label.setVisible(true);
                 } else {

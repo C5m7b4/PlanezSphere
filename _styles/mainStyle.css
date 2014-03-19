@@ -48,6 +48,8 @@
 
 .lblNoWarning{
 	color:#21e921;
+	background-image:url(../_images/GreenExcl.png);
+	background-repeat:no-repeat;
 }
 
 

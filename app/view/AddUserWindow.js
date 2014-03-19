@@ -289,6 +289,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
             label.addCls('lblWarning');
             label.setText('must be at least 6 chars');
             label.setVisible(true);
+            labelIcon.removeCls('lblNoWarningLabel');
             labelIcon.addCls('lblWarningLabel');
             return;
         }
@@ -313,6 +314,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                     label.setText('Username is good!');
                     btn.setDisabled(false);
                     label.setVisible(true);
+                    labelIcon.removeCls('lblWarningLabel');
                     labelIcon.addCls('lblNoWarningLabel');
                 } else {
                     //this username is taken
@@ -321,6 +323,7 @@ Ext.define('PlanezSphere.view.AddUserWindow', {
                     label.addCls('lblWarning');
                     label.setText('Username is already Taken');
                     label.setVisible(true);
+                    labelIcon.removeCls('lblNoWarningLabel');
                     labelIcon.addCls('lblWarningLabel');
                 }
 

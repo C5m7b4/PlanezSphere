@@ -8,7 +8,7 @@ Ext.define('Ext.ux.form.PasswordMeter',{
 	},
 	fieldSubTpl:[
 		'<div><input id="{id}" type="{type}",',
-		'<tpl if="name>name="{name}" </tpl>',
+		'<tpl if="name">name="{name}" </tpl>',
 		'<tpl if="size">size="{size}" </tpl>',
 		'<tpl if="tabIdx">tabIndex="{tabIdx}" </tpl>',
 		'class="{fieldCls} {typeCls}" autocomplete="off" /></div>',
@@ -37,7 +37,13 @@ Ext.define('Ext.ux.form.PasswordMeter',{
             score = me.calcStrength(val);
             scoreWidth = maxWidth - (maxWidth / 100) * score;
             scoreBar.setWidth(scoreWidth, true);
-        } else {
+        }
+		else if (val.length === 0){
+			maxWidth = 0;
+			score = 0;
+			scoreWidth = 0;
+			scoreBar.setWidth(0,true);
+		} else {
             scoreBar.setWidth(0, true);
         }
 	},
